@@ -1,0 +1,839 @@
+{
+  "categories": {
+    "B-01": {
+      "title": "Estendere l’universo",
+      "summary": "Quando l’insieme numerico o lo spazio è troppo piccolo."
+    },
+    "B-02": {
+      "title": "Riscrivere e semplificare",
+      "summary": "Trovare una forma utile controllando l’insieme delle soluzioni."
+    },
+    "B-03": {
+      "title": "Separare e scomporre",
+      "summary": "Scomporre un problema in parti più semplici e indipendenti."
+    },
+    "B-04": {
+      "title": "Cambiare rappresentazione",
+      "summary": "Semplificare le operazioni cambiando rappresentazione."
+    },
+    "B-05": {
+      "title": "Geometria e dualità",
+      "summary": "Usare coniugio, ortogonalità e descrizioni duali."
+    },
+    "B-06": {
+      "title": "Dal locale al globale",
+      "summary": "Collegare derivate, bordi e quantità globali."
+    },
+    "B-07": {
+      "title": "Approssimare e linearizzare",
+      "summary": "Sostituire formule esatte con approssimazioni controllate."
+    },
+    "B-08": {
+      "title": "Scambiare operazioni infinite",
+      "summary": "Verificare quando scambiare limiti, somme e integrali."
+    },
+    "B-09": {
+      "title": "Esistenza e unicità",
+      "summary": "Dimostrare che una soluzione esiste prima di calcolarla."
+    },
+    "B-10": {
+      "title": "Stimare e controllare",
+      "summary": "Controllare una quantità con disuguaglianze e stime."
+    },
+    "B-11": {
+      "title": "Ottimizzare e variare",
+      "summary": "Collegare equazioni, energia e minimizzazione."
+    },
+    "B-12": {
+      "title": "Calcolare e verificare",
+      "summary": "Trasformare la teoria in algoritmi e verificarne i risultati."
+    }
+  },
+  "domains": {
+    "D-01": {
+      "title": "Numeri e complessi"
+    },
+    "D-02": {
+      "title": "Algebra simbolica"
+    },
+    "D-03": {
+      "title": "Geometria e trigonometria"
+    },
+    "D-04": {
+      "title": "Algebra lineare"
+    },
+    "D-05": {
+      "title": "Calcolo e analisi reale"
+    },
+    "D-07": {
+      "title": "Misura e spazi di funzioni"
+    },
+    "D-08": {
+      "title": "Equazioni differenziali"
+    },
+    "D-09": {
+      "title": "Analisi complessa"
+    },
+    "D-10": {
+      "title": "Spazi di Hilbert e operatori"
+    },
+    "D-12": {
+      "title": "Ottimizzazione e numerica"
+    }
+  },
+  "bridges": {
+    "B-01.04": {
+      "title": "Estendere ai numeri complessi",
+      "summary": "Trovare radici che non esistono nei reali.",
+      "when": "Una quadratica reale ha discriminante negativo.",
+      "hypotheses": [
+        "Il problema ammette soluzioni complesse."
+      ],
+      "guarantees": "Ogni polinomio complesso non costante ha una radice complessa.",
+      "pitfalls": "Cambiare dominio cambia il problema: una radice complessa non è una soluzione reale.",
+      "steps": [
+        "Isola il quadrato.",
+        "Usa i² = −1 e conserva entrambe le radici.",
+        "Sostituisci entrambe le radici nell’equazione originale."
+      ]
+    },
+    "B-01.07": {
+      "title": "Completare uno spazio con prodotto interno",
+      "summary": "Aggiungere i limiti mancanti delle successioni di Cauchy.",
+      "when": "Uno spazio ha geometria ma non è completo nella norma indotta.",
+      "hypotheses": [
+        "È definito un prodotto interno positivo definito",
+        "Il completamento usa la norma indotta."
+      ],
+      "guarantees": "Un’immersione isometrica densa in uno spazio di Hilbert, unico a meno di isometrie.",
+      "pitfalls": "La convergenza L² non implica la convergenza in ogni punto.",
+      "steps": [
+        "Il limite è una funzione a gradino discontinua (a meno di insiemi nulli).",
+        "L’errore tende a zero; il limite appartiene a L²."
+      ]
+    },
+    "B-02.01": {
+      "title": "Fattorizzare un’espressione",
+      "summary": "Trasformare un polinomio in un prodotto di fattori semplici.",
+      "when": "Cerchi le radici di un polinomio o una cancellazione utile.",
+      "hypotheses": [
+        "La fattorizzazione è un’identità nel campo scelto",
+        "Per la legge di annullamento del prodotto, lavora su un campo come ℝ o ℂ."
+      ],
+      "guarantees": "Il polinomio e la sua fattorizzazione hanno gli stessi valori e le stesse radici.",
+      "pitfalls": "Cancellare un fattore in una frazione richiede comunque di escluderne gli zeri.",
+      "steps": [
+        "Trova due numeri con somma −5 e prodotto 6.",
+        "Un prodotto è nullo solo se almeno un fattore è nullo.",
+        "Verifica entrambe le radici nel polinomio originale."
+      ]
+    },
+    "B-02.02": {
+      "title": "Raccogliere e isolare",
+      "summary": "Raccogliere termini simili e isolare l’incognita.",
+      "when": "L’incognita compare linearmente.",
+      "hypotheses": [
+        "Somma la stessa espressione a entrambi i membri",
+        "Dividi solo per un coefficiente certamente non nullo."
+      ],
+      "guarantees": "I passaggi reversibili conservano l’insieme delle soluzioni.",
+      "pitfalls": "Se il coefficiente è zero, distingui un’identità da una contraddizione.",
+      "steps": [
+        "Sottrai 6 a entrambi i membri.",
+        "Dividi per 3, che è diverso da zero.",
+        "Verifica per sostituzione."
+      ]
+    },
+    "B-02.03": {
+      "title": "Completare il quadrato",
+      "summary": "Riscrivere una quadratica come quadrato traslato.",
+      "when": "La fattorizzazione è difficile o vuoi riconoscere il discriminante.",
+      "hypotheses": [
+        "Il coefficiente quadratico a è diverso da zero",
+        "Scegli il dominio reale o complesso richiesto."
+      ],
+      "guarantees": "Un’identità esatta che conduce alla formula risolutiva.",
+      "pitfalls": "Conserva entrambi i segni della radice; un discriminante negativo non dà radici reali.",
+      "steps": [
+        "Aggiungi 9 dopo aver spostato il termine noto.",
+        "Riconosci il quadrato perfetto.",
+        "Considera entrambe le radici e isola x.",
+        "Verifica entrambe le soluzioni."
+      ]
+    },
+    "B-02.04": {
+      "title": "Eliminare i denominatori",
+      "summary": "Trasformare una razionale in polinomiale sul suo dominio.",
+      "when": "Le frazioni nascondono un’equazione polinomiale più semplice.",
+      "hypotheses": [
+        "Annota tutti i denominatori originali",
+        "Escludi i loro zeri prima di moltiplicare."
+      ],
+      "guarantees": "Equazioni equivalenti sul dominio ristretto.",
+      "pitfalls": "La semplificazione non può riabilitare valori esclusi.",
+      "steps": [
+        "Annota la restrizione del denominatore originale.",
+        "Trova i candidati dal numeratore.",
+        "Scarta 1; solo −1 soddisfa l’equazione originale."
+      ]
+    },
+    "B-02.05": {
+      "title": "Dividere distinguendo i casi",
+      "summary": "Separare il caso nullo prima di cancellare un fattore incognito.",
+      "when": "Stai per dividere per un’espressione variabile.",
+      "hypotheses": [
+        "Il divisore deve essere non nullo nel ramo in cui dividi."
+      ],
+      "guarantees": "L’unione dei rami nullo e non nullo conserva tutte le soluzioni.",
+      "pitfalls": "Dividere subito per x perde la possibile radice x = 0.",
+      "steps": [
+        "Porta tutti i termini a un membro e fattorizza.",
+        "Considera il fattore nullo e il ramo non nullo.",
+        "Entrambe le radici soddisfano l’equazione originale."
+      ]
+    },
+    "B-02.06": {
+      "title": "Elevare al quadrato",
+      "summary": "Eliminare un radicale e generare soluzioni candidate.",
+      "when": "Un’equazione contiene radici quadrate.",
+      "hypotheses": [
+        "Per radici reali, il radicando è non negativo",
+        "Controlla il segno dell’altro membro",
+        "Verifica tutti i candidati nell’equazione originale."
+      ],
+      "guarantees": "Ogni soluzione originale sopravvive al quadrato; il ritorno va verificato.",
+      "pitfalls": "Il quadrato può introdurre radici spurie.",
+      "steps": [
+        "La radice è non negativa, quindi anche x deve esserlo.",
+        "Eleva al quadrato per ottenere i candidati 2 e −1.",
+        "Scarta −1 e verifica 2 nell’equazione originale."
+      ]
+    },
+    "B-02.07": {
+      "title": "Sostituire una variabile",
+      "summary": "Riconoscere un’equazione familiare dentro una forma insolita.",
+      "when": "Potenze o espressioni ripetute nascondono una struttura più semplice.",
+      "hypotheses": [
+        "Controlla l’immagine della sostituzione",
+        "Recupera tutti i valori originali ammessi per ogni nuovo valore."
+      ],
+      "guarantees": "Un problema equivalente conservando immagine e rami dell’inversa.",
+      "pitfalls": "Per u = x² in ℝ, u negativo non ha preimmagini e u positivo ne ha di solito due.",
+      "steps": [
+        "Sostituisci il quadrato ripetuto con u.",
+        "Fattorizza la quadratica.",
+        "Inverti x² = 1 e x² = 4, conservando entrambi i segni.",
+        "Tutti e quattro i candidati soddisfano il polinomio pari originale."
+      ]
+    },
+    "B-02.08": {
+      "title": "Eliminazione di Gauss",
+      "summary": "Usare operazioni di riga reversibili per risolvere sistemi lineari.",
+      "when": "Più incognite compaiono linearmente.",
+      "hypotheses": [
+        "Scambia righe, somma multipli o moltiplica per numeri non nulli",
+        "Controlla pivot ed eventuali casi parametrici."
+      ],
+      "guarantees": "Un sistema lineare equivalente con le stesse soluzioni.",
+      "pitfalls": "Un pivot nullo può richiedere uno scambio; una riga nulla non implica automaticamente incompatibilità.",
+      "steps": [
+        "Elimina x dalla seconda riga.",
+        "Sostituisci nella prima equazione.",
+        "Verifica entrambe le equazioni."
+      ]
+    },
+    "B-03.05": {
+      "title": "Fubini e Tonelli",
+      "summary": "Sostituire un integrale prodotto con integrali iterati.",
+      "when": "Un integrale multivariato è più semplice una variabile alla volta.",
+      "hypotheses": [
+        "Misurabilità su spazi di misura prodotto σ-finiti",
+        "Fubini: integrabilità assoluta",
+        "Tonelli: integrando non negativo, anche con integrale infinito."
+      ],
+      "guarantees": "Gli integrali iterati e prodotto coincidono sotto il teorema appropriato.",
+      "pitfalls": "La sola convergenza condizionata non giustifica lo scambio d’ordine.",
+      "steps": [
+        "L’integrando è continuo e non negativo su un quadrato compatto.",
+        "Integrando e dominio prodotto permettono la fattorizzazione.",
+        "L’integrazione iterata diretta conferma il valore."
+      ]
+    },
+    "B-03.07": {
+      "title": "Separare le variabili",
+      "summary": "Trasformare un’equazione differenziale separabile in due integrali.",
+      "when": "La derivata è prodotto di una funzione di x e una di y.",
+      "hypotheses": [
+        "Lavora dove h(y) è non nullo",
+        "Controlla separatamente le soluzioni costanti h(y) = 0",
+        "Conserva dati iniziali e intervalli di soluzione."
+      ],
+      "guarantees": "Una soluzione implicita su ciascun ramo valido.",
+      "pitfalls": "La divisione può perdere soluzioni di equilibrio.",
+      "steps": [
+        "Sul ramo non nullo, separa le variabili.",
+        "Integra ed esponenzia; anche y = 0 è un equilibrio.",
+        "Il dato iniziale sceglie K = 1; verifica la derivata."
+      ]
+    },
+    "B-03.12": {
+      "title": "Diagonalizzare una matrice normale",
+      "summary": "Separare un operatore lineare in modi propri ortogonali.",
+      "when": "Potenze o sistemi accoppiati sono difficili nella base attuale.",
+      "hypotheses": [
+        "A è una matrice complessa normale finito-dimensionale: A*A = AA*."
+      ],
+      "guarantees": "Esiste una base unitaria di autovettori; le matrici hermitiane hanno autovalori reali.",
+      "pitfalls": "Non ogni matrice è diagonalizzabile, né diagonalizzabile unitariamente.",
+      "steps": [
+        "Scegli autovettori ortonormali di questa matrice simmetrica.",
+        "Verifica direttamente i due autovalori.",
+        "L’operatore trasformato agisce separatamente su ogni coordinata."
+      ]
+    },
+    "B-03.13": {
+      "title": "Serie di Fourier",
+      "summary": "Rappresentare una funzione periodica L² con modi ortonormali.",
+      "when": "Servono coordinate in frequenza o un’approssimazione a modi finiti.",
+      "hypotheses": [
+        "f appartiene a L²([−π, π])",
+        "Usa la base completa eₙ(x) = exp(inx)/√(2π)."
+      ],
+      "guarantees": "La serie converge in norma L² e Parseval conserva l’energia.",
+      "pitfalls": "La convergenza L² non garantisce convergenza ovunque o uniforme.",
+      "steps": [
+        "L’identità di Eulero dà esattamente due modi.",
+        "Tieni conto della normalizzazione della base.",
+        "Verifica Parseval integrando cos² su [−π, π]."
+      ]
+    },
+    "B-04.01": {
+      "title": "Usare coordinate polari",
+      "summary": "Riconoscere la simmetria radiale e semplificare integrali piani.",
+      "when": "L’espressione dipende da x² + y² o la regione è circolare.",
+      "hypotheses": [
+        "Scegli un dominio gestendo rami dell’angolo e origine",
+        "Usa il Jacobiano r negli integrali di area."
+      ],
+      "guarantees": "Una descrizione equivalente con la misura corretta.",
+      "pitfalls": "Dimenticare il Jacobiano cambia l’integrale.",
+      "steps": [
+        "Il disco diventa un rettangolo nei parametri (r, θ).",
+        "Includi r e integra; il risultato coincide con l’area del disco."
+      ]
+    },
+    "B-04.05": {
+      "title": "Trasformata di Fourier",
+      "summary": "Trasformare le derivate in moltiplicazioni in frequenza.",
+      "when": "Un operatore differenziale a coefficienti costanti è difficile da invertire.",
+      "hypotheses": [
+        "Per la regola classica, regolarità e decadimento sufficienti",
+        "Usa uno spazio funzionale e un teorema d’inversione appropriati."
+      ],
+      "guarantees": "Con f̂(ξ) = ∫f(x)e^(−iξx) dx, le derivate diventano moltiplicatori algebrici.",
+      "pitfalls": "Condizioni al contorno, zeri dei moltiplicatori e ipotesi d’inversione restano essenziali.",
+      "steps": [
+        "Trasforma la derivata seconda con la convenzione dichiarata.",
+        "Il moltiplicatore non si annulla sull’asse reale.",
+        "Verifica in frequenza; inverti in uno spazio adatto, ad esempio per dati di Schwartz."
+      ]
+    },
+    "B-04.06": {
+      "title": "Dalla convoluzione al prodotto",
+      "summary": "Sostituire un integrale di convoluzione con un prodotto puntuale.",
+      "when": "Un filtro lineare o un’equazione integrale contiene una convoluzione.",
+      "hypotheses": [
+        "Per il teorema classico standard, f e g appartengono a L¹(ℝ)",
+        "Fissa la normalizzazione di Fourier."
+      ],
+      "guarantees": "La trasformata della convoluzione è il prodotto delle trasformate.",
+      "pitfalls": "La trasformata di un prodotto è una convoluzione con un fattore di normalizzazione.",
+      "steps": [
+        "L’integrale diretto va da 0 a x quando x ≥ 0.",
+        "Le trasformate dirette verificano l’identità di convoluzione."
+      ]
+    },
+    "B-04.07": {
+      "title": "Trasformata di Laplace",
+      "summary": "Risolvere un problema iniziale ODE in un dominio algebrico.",
+      "when": "Un’ODE ha dati iniziali e una trasformata di Laplace utile.",
+      "hypotheses": [
+        "Regolarità e ordine esponenziale adeguati",
+        "Lavora in un semipiano di convergenza",
+        "Conserva i dati iniziali nelle trasformate delle derivate."
+      ],
+      "guarantees": "L’equazione trasformata codifica ODE e dato iniziale.",
+      "pitfalls": "Omettere il termine iniziale cambia il problema.",
+      "steps": [
+        "Trasforma l’equazione con y(0) = 0.",
+        "Risolvi algebricamente e scomponi in fratti semplici.",
+        "Inverti e verifica ODE e dato iniziale."
+      ]
+    },
+    "B-04.11": {
+      "title": "Identità di Eulero",
+      "summary": "Collegare rotazioni, trigonometria ed esponenziali complessi.",
+      "when": "Prodotti trigonometrici o rotazioni sono scomodi.",
+      "hypotheses": [
+        "θ è reale nell’interpretazione geometrica",
+        "Per un complesso unitario gli angoli si identificano modulo 2π."
+      ],
+      "guarantees": "Un’identità esatta fra espressioni trigonometriche ed esponenziali.",
+      "pitfalls": "L’argomento non è un’inversa globalmente univoca dell’esponenziale complesso.",
+      "steps": [
+        "Espandi il prodotto usando l’identità di Eulero.",
+        "Confronta le parti reali per ritrovare la formula di addizione.",
+        "Verifica una coppia concreta di angoli."
+      ]
+    },
+    "B-05.01": {
+      "title": "Usare il coniugato",
+      "summary": "Collegare l’aritmetica complessa a quantità reali non negative.",
+      "when": "Devi dividere complessi o calcolare un modulo.",
+      "hypotheses": [
+        "Per l’inversione, z è non nullo",
+        "Il coniugio è antilineare su ℂ."
+      ],
+      "guarantees": "Il prodotto per il coniugato dà il modulo al quadrato.",
+      "pitfalls": "Coniugare uno scalare complesso coniuga anche i coefficienti che lo moltiplicano.",
+      "steps": [
+        "Moltiplica numeratore e denominatore per il coniugato.",
+        "Il denominatore è il modulo al quadrato.",
+        "Il prodotto verifica il reciproco."
+      ]
+    },
+    "B-05.03": {
+      "title": "Prodotto hermitiano",
+      "summary": "Costruire una geometria positiva sui vettori complessi.",
+      "when": "Il prodotto bilineare ingenuo dà una lunghezza al quadrato negativa.",
+      "hypotheses": [
+        "I vettori appartengono allo stesso spazio con prodotto interno complesso",
+        "L’atlante usa la linearità nel secondo argomento."
+      ],
+      "guarantees": "Simmetria coniugata, positività definita e norma al quadrato reale non negativa.",
+      "pitfalls": "Altri testi usano la convenzione opposta; le formule di proiezione devono essere coerenti.",
+      "steps": [
+        "Coniuga il primo vettore prima di moltiplicare.",
+        "La norma al quadrato è positiva.",
+        "Il prodotto interno certifica ortogonalità e lunghezza."
+      ]
+    },
+    "B-05.04": {
+      "title": "Proiezione ortogonale",
+      "summary": "Trovare il punto più vicino su una retta con il prodotto interno.",
+      "when": "Serve un’approssimazione ottimale o una scomposizione ortogonale.",
+      "hypotheses": [
+        "u è non nullo",
+        "Usa una convenzione coerente per il prodotto interno."
+      ],
+      "guarantees": "Il residuo è ortogonale a u e la proiezione minimizza la distanza da v su span(u).",
+      "pitfalls": "La proiezione perde informazione: da sola non permette di recuperare il vettore originale.",
+      "steps": [
+        "Calcola numeratore e denominatore usando il coniugato.",
+        "Il coefficiente di proiezione è 1.",
+        "L’ortogonalità verifica l’approssimazione ottimale."
+      ]
+    },
+    "B-05.06": {
+      "title": "Rappresentazione di Riesz",
+      "summary": "Rappresentare un funzionale lineare continuo con un unico vettore.",
+      "when": "Un funzionale si comprende meglio geometricamente.",
+      "hypotheses": [
+        "H è uno spazio di Hilbert",
+        "F è lineare e continuo",
+        "Usa la linearità nel secondo argomento del prodotto interno."
+      ],
+      "guarantees": "Esiste un unico vettore rappresentante v con ‖F‖ = ‖v‖.",
+      "pitfalls": "Uno spazio normato arbitrario può non avere questa rappresentazione tramite prodotto interno.",
+      "steps": [
+        "Scegli v affinché le componenti coniugate siano i coefficienti di F.",
+        "Verifica la rappresentazione per un vettore x arbitrario."
+      ]
+    },
+    "B-05.07": {
+      "title": "Operatore aggiunto",
+      "summary": "Spostare un operatore da un argomento all’altro del prodotto interno.",
+      "when": "Servono autoaggiuntezza, normalità o azione duale di un operatore.",
+      "hypotheses": [
+        "A è un operatore lineare limitato su Hilbert",
+        "Per matrici, usa il prodotto hermitiano."
+      ],
+      "guarantees": "L’aggiunto esiste ed è unico; in dimensione finita è la trasposta coniugata.",
+      "pitfalls": "Per operatori non limitati il dominio dell’aggiunto fa parte della definizione.",
+      "steps": [
+        "Trasponi e coniuga ogni elemento.",
+        "Questa identità verifica la proprietà definitoria del prodotto interno."
+      ]
+    },
+    "B-06.03": {
+      "title": "Teorema della divergenza",
+      "summary": "Sostituire un flusso al bordo con un integrale nel volume.",
+      "when": "Parametrizzare il bordo è più difficile che derivare il campo.",
+      "hypotheses": [
+        "Una regione limitata con bordo sufficientemente regolare",
+        "Un campo vettoriale sufficientemente regolare",
+        "Usa la normale uscente."
+      ],
+      "guarantees": "Il flusso uscente totale è l’integrale della divergenza.",
+      "pitfalls": "La normale entrante inverte il segno del flusso.",
+      "steps": [
+        "Deriva le due componenti.",
+        "Moltiplica per l’area del disco unitario.",
+        "L’integrazione diretta al bordo conferma il risultato."
+      ]
+    },
+    "B-06.05": {
+      "title": "Teorema dei residui",
+      "summary": "Trasformare un integrale di contorno in una somma sui poli.",
+      "when": "Le singolarità complesse semplificano un integrale difficile.",
+      "hypotheses": [
+        "f è meromorfa dentro e su un contorno semplice chiuso orientato positivamente",
+        "I poli interni sono finiti e nessuno giace sul contorno."
+      ],
+      "guarantees": "L’integrale di contorno è determinato dai residui interni.",
+      "pitfalls": "Per integrali reali impropri, giustifica i contributi dei tratti di contorno aggiunti.",
+      "steps": [
+        "L’unico polo interno è semplice.",
+        "Applica il teorema con orientazione antioraria.",
+        "La convergenza uniforme sul cerchio permette di integrare termine a termine; contribuisce solo 1/z."
+      ]
+    },
+    "B-07.02": {
+      "title": "Polinomio di Taylor con resto",
+      "summary": "Approssimare una funzione controllando l’errore.",
+      "when": "Un polinomio locale è più facile da calcolare della funzione.",
+      "hypotheses": [
+        "Derivabilità sufficiente sull’intervallo fra a e x",
+        "Limita la derivata successiva per controllare il resto di Lagrange."
+      ],
+      "guarantees": "Un polinomio finito più un resto esatto; una stima della derivata limita l’errore.",
+      "pitfalls": "La sola regolarità C∞ non implica uguaglianza con la serie infinita di Taylor.",
+      "steps": [
+        "Usa il polinomio di grado due centrato in 0.",
+        "Su [0, 0.2], la derivata terza è al più e^0.2.",
+        "Il risultato è un intervallo, non un decimale dichiarato esatto."
+      ]
+    },
+    "B-08.01": {
+      "title": "Convergenza dominata",
+      "summary": "Giustificare il passaggio del limite sotto integrale.",
+      "when": "Il limite puntuale è semplice ma gli integrali dipendono da n.",
+      "hypotheses": [
+        "Funzioni misurabili convergono quasi ovunque",
+        "Un’unica g integrabile domina ogni abs(fₙ) quasi ovunque."
+      ],
+      "guarantees": "Gli integrali convergono e ‖fₙ − f‖₁ tende a zero.",
+      "pitfalls": "Un limite diverso per ogni n non basta: il dominante deve essere uniforme.",
+      "steps": [
+        "La convergenza fallisce solo in x = 1, un insieme nullo; 1 è integrabile.",
+        "Applica la convergenza dominata.",
+        "L’integrale esplicito verifica il limite."
+      ]
+    },
+    "B-09.01": {
+      "title": "Teorema dei valori intermedi",
+      "summary": "Garantire una radice reale tramite un cambio di segno.",
+      "when": "Vuoi dimostrare l’esistenza o racchiudere una radice per la bisezione.",
+      "hypotheses": [
+        "f è continua su [a, b]",
+        "I valori agli estremi hanno segno opposto."
+      ],
+      "guarantees": "Almeno una radice si trova nell’intervallo aperto.",
+      "pitfalls": "Un cambio di segno attraverso una discontinuità non garantisce una radice; l’unicità non segue.",
+      "steps": [
+        "Il polinomio è continuo e cambia segno.",
+        "L’esistenza segue senza una formula chiusa per la radice.",
+        "Un ulteriore argomento di monotonia prova l’unicità in questo intervallo."
+      ]
+    },
+    "B-09.03": {
+      "title": "Teorema del punto fisso di Banach",
+      "summary": "Ottenere una soluzione unica e un’iterazione convergente da una contrazione.",
+      "when": "Un’equazione può scriversi x = T(x).",
+      "hypotheses": [
+        "Uno spazio metrico X non vuoto e completo",
+        "T manda tutto X in X",
+        "Una costante di contrazione uniforme 0 ≤ q < 1."
+      ],
+      "guarantees": "Un unico punto fisso; ogni iterazione da X converge con stima esplicita dell’errore.",
+      "pitfalls": "Una derivata piccola in un punto non è una stima uniforme di contrazione.",
+      "steps": [
+        "Verifica invarianza, completezza e contrazione uniforme.",
+        "Itera da un punto qualsiasi di [0, 1].",
+        "Questa stima a posteriori certifica l’errore, diversamente dalla sola stabilità dei decimali."
+      ]
+    },
+    "B-09.09": {
+      "title": "Teorema di Lax–Milgram",
+      "summary": "Dimostrare l’esistenza di un’unica soluzione debole in Hilbert.",
+      "when": "Una PDE si esprime meglio tramite funzioni test.",
+      "hypotheses": [
+        "H è uno spazio di Hilbert reale",
+        "a è bilineare, continua e coerciva",
+        "F è un funzionale lineare continuo."
+      ],
+      "guarantees": "Esiste un’unica soluzione debole u in H.",
+      "pitfalls": "Una soluzione debole non è automaticamente classica; occorre provare ulteriore regolarità.",
+      "steps": [
+        "Scegli lo spazio di Sobolev e usa la norma della derivata.",
+        "Cauchy–Schwarz e Poincaré danno la continuità.",
+        "La coercività dà un’unica soluzione debole; l’identità variazionale è il criterio di verifica."
+      ]
+    },
+    "B-10.02": {
+      "title": "Disuguaglianza di Cauchy–Schwarz",
+      "summary": "Limitare un prodotto interno col prodotto delle lunghezze.",
+      "when": "Serve una stima, continuità o un controllo dell’errore.",
+      "hypotheses": [
+        "Uno spazio con prodotto interno reale o complesso."
+      ],
+      "guarantees": "Una stima universale; uguaglianza esattamente per vettori linearmente dipendenti, inclusi i casi nulli.",
+      "pitfalls": "È una stima, non una formula per il valore effettivo del prodotto interno.",
+      "steps": [
+        "Calcola le quantità nella stima.",
+        "Il quadrato dei membri non negativi verifica la disuguaglianza."
+      ]
+    },
+    "B-11.05": {
+      "title": "Equazione di Eulero–Lagrange",
+      "summary": "Trovare l’equazione differenziale di una curva stazionaria.",
+      "when": "Il problema cerca una curva che minimizza un funzionale integrale.",
+      "hypotheses": [
+        "Regolarità sufficiente di lagrangiana e curva candidata",
+        "Le variazioni a estremi fissati si annullano al bordo",
+        "La candidata è un punto stazionario interno."
+      ],
+      "guarantees": "Una condizione necessaria di stazionarietà; per un minimo servono altre condizioni.",
+      "pitfalls": "Risolvere Eulero–Lagrange da solo non prova un minimo globale.",
+      "steps": [
+        "Le candidate stazionarie sono rette.",
+        "I valori agli estremi determinano la retta.",
+        "Un calcolo separato con energia non negativa verifica il minimo globale."
+      ]
+    },
+    "B-11.06": {
+      "title": "Minimi quadrati come proiezione",
+      "summary": "Proiettare i dati sull’immagine di una matrice.",
+      "when": "Un sistema sovradeterminato non ha soluzione esatta.",
+      "hypotheses": [
+        "Spazi euclidei reali o complessi finito-dimensionali",
+        "Per coefficienti unici occorre rango pieno per colonne."
+      ],
+      "guarantees": "Esiste un’approssimazione ottimale con residuo ortogonale allo spazio delle colonne.",
+      "pitfalls": "Le equazioni normali possono peggiorare il condizionamento; numericamente sono spesso preferibili QR o SVD.",
+      "steps": [
+        "Risolvi l’equazione normale.",
+        "L’ortogonalità certifica la soluzione ai minimi quadrati.",
+        "Il completamento del quadrato verifica direttamente il minimo unico."
+      ]
+    },
+    "B-12.01": {
+      "title": "Bisezione",
+      "summary": "Dimezzare ripetutamente un intervallo contenente una radice reale.",
+      "when": "Hai una funzione continua e un intervallo con cambio di segno.",
+      "hypotheses": [
+        "Continuità sull’intervallo chiuso iniziale",
+        "Segni opposti e non nulli agli estremi, oppure gestisci prima radici agli estremi."
+      ],
+      "guarantees": "Intervalli annidati con una radice; l’errore del punto medio è al più metà della larghezza.",
+      "pitfalls": "Senza continuità un cambio di segno può nascondere un polo anziché una radice.",
+      "steps": [
+        "Il valore positivo al punto medio conserva la metà sinistra.",
+        "I segni agli estremi restano opposti.",
+        "Il nuovo punto medio ha una stima certificata dell’errore."
+      ]
+    },
+    "B-12.02": {
+      "title": "Metodo di Newton",
+      "summary": "Seguire le tangenti verso una radice.",
+      "when": "Un’equazione derivabile non ha una soluzione esatta comoda.",
+      "hypotheses": [
+        "Derivata non nulla a ogni iterazione",
+        "Per convergenza quadratica locale, regolarità vicino a una radice semplice e un punto iniziale abbastanza vicino."
+      ],
+      "guarantees": "Sotto ipotesi locali, convergenza rapida a una radice semplice.",
+      "pitfalls": "Punti iniziali sfavorevoli, derivate nulle o radici multiple possono compromettere la convergenza.",
+      "steps": [
+        "Inserisci f e la sua derivata nella regola di Newton.",
+        "Calcola due iterazioni.",
+        "Un residuo e la fattorizzazione dell’errore verificano il progresso."
+      ]
+    },
+    "B-12.09": {
+      "title": "Residuo e condizionamento",
+      "summary": "Collegare residuo ed errore di una soluzione approssimata.",
+      "when": "Una risposta numerica sembra precisa perché il residuo è piccolo.",
+      "hypotheses": [
+        "A è invertibile",
+        "Usa norme compatibili per matrici e vettori",
+        "Stima la norma dell’inversa o il numero di condizionamento."
+      ],
+      "guarantees": "Un controllo a posteriori dell’errore che tiene conto della sensibilità.",
+      "pitfalls": "Un residuo minuscolo può accompagnarsi a un grande errore in un problema mal condizionato.",
+      "steps": [
+        "Il residuo è molto piccolo.",
+        "Ma l’errore effettivo ha grandezza 1.",
+        "La norma dell’inversa spiega e limita esattamente l’errore in questo caso."
+      ]
+    },
+    "B-12.11": {
+      "title": "Verificare nell’equazione originale",
+      "summary": "Controllare candidati nell’espressione e nel dominio originali.",
+      "when": "Una trasformazione, cancellazione o un motore simbolico ha prodotto radici.",
+      "hypotheses": [
+        "Il candidato appartiene al dominio originale",
+        "Ogni espressione originale è definita",
+        "La sostituzione esatta dà residuo nullo, oppure l’errore numerico è controllato."
+      ],
+      "guarantees": "Ogni candidato verificato è una soluzione; la completezza richiede un argomento separato.",
+      "pitfalls": "Un residuo numerico quasi nullo non è da solo una prova esatta né un elenco completo delle radici.",
+      "steps": [
+        "Sostituisci nell’equazione originale, non in quella al quadrato.",
+        "Scarta la radice spuria e verifica la radice valida 2."
+      ]
+    }
+  },
+  "routes": {
+    "R-ALG": {
+      "title": "Dall’equazione alle radici verificate"
+    },
+    "R-HILBERT": {
+      "title": "Dai numeri immaginari a Hilbert"
+    },
+    "R-ODE": {
+      "title": "Dalle derivate all’algebra"
+    },
+    "R-NUM": {
+      "title": "Dall’esistenza all’approssimazione"
+    }
+  },
+  "ui": {
+    "appName": "Ponti Matematici",
+    "subtitle": "Un atlante per ragionare in matematica",
+    "explore": "Esplora i ponti",
+    "map": "Vista mappa",
+    "solver": "Laboratorio equazioni",
+    "routes": "Percorsi di studio",
+    "compare": "Confronta i pin",
+    "search": "Cerca un metodo, una formula o un ostacolo…",
+    "searchLabel": "Cerca nell’atlante",
+    "clear": "Cancella",
+    "allLevels": "Tutti i livelli",
+    "level": "Livello",
+    "allFamilies": "Tutte le famiglie",
+    "families": "Per obiettivo",
+    "disciplines": "Per disciplina",
+    "browse": "Naviga nell’atlante",
+    "introLabel": "TROVA LA PROSSIMA CONNESSIONE",
+    "introTitle": "Un altro punto di vista.\nUn problema più semplice.",
+    "introText": "Trova la trasformazione che sblocca il tuo problema. Esplora i metodi, verifica le condizioni e collega le idee dietro le equazioni.",
+    "bridgeCount": "ponti",
+    "familyCount": "famiglie",
+    "languages": "lingue",
+    "featured": "Un buon punto di partenza",
+    "allBridges": "La biblioteca dei ponti",
+    "results": "risultati",
+    "noResults": "Nessun ponte corrisponde ai filtri. Prova un altro termine o cancella i filtri.",
+    "reset": "Azzera i filtri",
+    "open": "Esplora il ponte",
+    "pin": "Fissa per il confronto",
+    "unpin": "Rimuovi dai pin",
+    "pinned": "Ponti fissati",
+    "emptyPins": "Fissa alcuni ponti per tenerli vicini e confrontare i loro metodi.",
+    "pinHint": "Il tuo spazio di confronto",
+    "viewPins": "Confronta",
+    "close": "Chiudi",
+    "back": "Torna alla biblioteca",
+    "when": "Quando usarlo",
+    "hypotheses": "Verifica le condizioni",
+    "guarantees": "Che cosa garantisce",
+    "pitfalls": "Attenzione a",
+    "example": "Attraversa il ponte: un esempio svolto",
+    "why": "Perché funziona questo passaggio",
+    "related": "Scopri un’altra connessione",
+    "prerequisites": "Basi utili",
+    "source": "Leggi l’atlante originale (italiano)",
+    "catalogNote": "Una prima raccolta curata basata sull’atlante fondativo. Altri nodi si possono aggiungere tramite il catalogo JSON.",
+    "resultType": "Tipo di risultato",
+    "reversibility": "Reversibilità",
+    "yes": "Reversibile",
+    "no": "Non generalmente reversibile",
+    "conditional": "Condizionata",
+    "compareTitle": "Ponti diversi, fianco a fianco.",
+    "compareText": "Tieni in vista obiettivi, condizioni e garanzie mentre scegli il prossimo passo.",
+    "compareEmpty": "Fissa almeno due ponti per confrontare i metodi.",
+    "remove": "Rimuovi pin",
+    "mapTitle": "Scopri come si collegano gli strumenti.",
+    "mapText": "Espandi i nodi, ingrandisci e segui i collegamenti ai ponti. Scegli una famiglia per concentrarti su una parte dell’atlante.",
+    "mapScope": "Ambito della mappa",
+    "fit": "Adatta la mappa",
+    "mapFallback": "La stessa gerarchia è disponibile nel navigatore ad albero accessibile.",
+    "routesTitle": "Segui un filo di idee.",
+    "routesText": "Ogni percorso collega una sequenza di ponti. Inizia dove vuoi e torna alle basi quando serve.",
+    "startPath": "Esplora questo percorso",
+    "solverTitle": "Che cosa può sbloccare la tua equazione?",
+    "solverText": "Algebrite analizza un’equazione, suggerisce ponti e spiega i passaggi supportati. Tutti i calcoli restano nel browser.",
+    "equation": "La tua equazione",
+    "variable": "Variabile",
+    "domain": "Dominio delle soluzioni",
+    "real": "Numeri reali ℝ",
+    "complex": "Numeri complessi ℂ",
+    "analyze": "Trova un ponte",
+    "analyzing": "Analisi in corso…",
+    "syntax": "Usa la moltiplicazione esplicita: 2*x. Potenze: x^2. Funzioni: sqrt(x), sin(x), cos(x), tan(x), exp(x), log(x). Una variabile; passaggi guidati per polinomi fino al grado 4 ed equazioni radicali semplici.",
+    "try": "Prova un esempio",
+    "suggestions": "Ponti da esplorare",
+    "analysis": "Percorso di soluzione",
+    "conditions": "Controlli sul dominio originale",
+    "noRestrictions": "Nessuna restrizione aggiuntiva da denominatori o funzioni.",
+    "candidates": "Radici candidate",
+    "verification": "Verifica nell’equazione originale",
+    "verified": "Verificata esattamente",
+    "rejected": "Scartata",
+    "unknown": "Non certificata",
+    "emptyRoots": "Nessuna soluzione nel dominio scelto.",
+    "identity": "Ogni valore del dominio originale soddisfa questa equazione.",
+    "contradiction": "Questa equazione non ha soluzioni.",
+    "unsupported": "Questa forma richiede ulteriore analisi. I ponti sono suggerimenti, non un percorso di soluzione certificato.",
+    "limited": "Il risolutore guidato tratta polinomi in una variabile di grado 1–4, razionali con tali numeratori e sqrt(polinomio) = polinomio lineare. Per altre forme fornisce solo suggerimenti.",
+    "invalid": "Inserisci un’equazione valida con una sola variabile supportata. Usa moltiplicazioni esplicite e funzioni supportate.",
+    "tooComplex": "L’espressione è troppo grande per il risolutore guidato. Semplificala prima.",
+    "timeout": "Il calcolo è durato troppo ed è stato interrotto. Prova un’espressione più semplice.",
+    "workerError": "Il motore simbolico non ha terminato il calcolo. Prova un’espressione più semplice.",
+    "stepNormalize": "Porta tutto a sinistra e semplifica.",
+    "stepFactor": "Fattorizza il numeratore. Le restrizioni sui denominatori restano valide.",
+    "stepLinear": "Isola la variabile usando un coefficiente non nullo.",
+    "stepQuadratic": "Usa la formula risolutiva; il discriminante determina radici reali o complesse.",
+    "stepSubstitution": "Riconosci una quadratica nel quadrato della variabile, poi recupera entrambi i segni.",
+    "stepRoots": "Genera radici polinomiali candidate con Algebrite.",
+    "stepSquare": "Eleva al quadrato per generare candidati, poi verifica l’equazione radicale originale.",
+    "stepVerify": "Sostituisci ogni candidato nei due membri originali e verifica ogni restrizione del dominio.",
+    "rootNote": "Sono accettati solo i candidati certificati nell’equazione originale. Un candidato non certificato richiede altri controlli; in tal caso l’elenco potrebbe essere incompleto.",
+    "powered": "Realizzato con Algebrite · KaTeX · Markmap",
+    "footer": "Comprendi il perché. Verifica quando. Scopri che cosa segue.",
+    "menu": "Mostra o nascondi la navigazione",
+    "copyLink": "Copia il link al ponte",
+    "copied": "Link copiato",
+    "copyFailed": "Copia l’indirizzo dal browser.",
+    "saved": "Salvato localmente",
+    "skip": "Vai al contenuto",
+    "browseAll": "Esplora tutti i ponti",
+    "enterEquation": "Inserisci un’equazione",
+    "path": "Percorso",
+    "overview": "Panoramica",
+    "review": "Stato editoriale: in attesa di revisione indipendente",
+    "mapLoading": "Caricamento mappa…",
+    "types": {
+      "EXACT_EQUIVALENCE": "Equivalenza esatta",
+      "EXACT_IMPLICATION": "Implicazione unidirezionale",
+      "EXACT_REPRESENTATION": "Rappresentazione esatta",
+      "DOMAIN_EXTENSION": "Estensione del dominio",
+      "APPROX_WITH_ERROR": "Approssimazione con errore",
+      "EXISTENCE": "Esistenza",
+      "EXISTENCE_UNIQUENESS": "Esistenza e unicità",
+      "BOUND_ONLY": "Solo stima",
+      "NECESSARY_CONDITION": "Condizione necessaria",
+      "ALGORITHM": "Algoritmo"
+    }
+  }
+}

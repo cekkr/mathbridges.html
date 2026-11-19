@@ -1,0 +1,1466 @@
+{
+  "version": 1,
+  "source": "docs/atlante_ponti_matematici-ITA.md",
+  "categories": [
+    {
+      "id": "B-01"
+    },
+    {
+      "id": "B-02"
+    },
+    {
+      "id": "B-03"
+    },
+    {
+      "id": "B-04"
+    },
+    {
+      "id": "B-05"
+    },
+    {
+      "id": "B-06"
+    },
+    {
+      "id": "B-07"
+    },
+    {
+      "id": "B-08"
+    },
+    {
+      "id": "B-09"
+    },
+    {
+      "id": "B-10"
+    },
+    {
+      "id": "B-11"
+    },
+    {
+      "id": "B-12"
+    }
+  ],
+  "domains": [
+    {
+      "id": "D-01"
+    },
+    {
+      "id": "D-02"
+    },
+    {
+      "id": "D-03"
+    },
+    {
+      "id": "D-04"
+    },
+    {
+      "id": "D-05"
+    },
+    {
+      "id": "D-07"
+    },
+    {
+      "id": "D-08"
+    },
+    {
+      "id": "D-09"
+    },
+    {
+      "id": "D-10"
+    },
+    {
+      "id": "D-12"
+    }
+  ],
+  "bridges": [
+    {
+      "id": "B-01.04",
+      "kind": "bridge",
+      "parentId": "B-01",
+      "level": 2,
+      "domainIds": [
+        "D-01",
+        "D-02"
+      ],
+      "formulaLatex": "\\mathbb R\\subset\\mathbb C,\\qquad i^2=-1",
+      "resultKind": "DOMAIN_EXTENSION",
+      "reversible": false,
+      "relatedIds": [
+        "B-05.01",
+        "B-04.11",
+        "B-02.03"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "x^2+9=0",
+        "steps": [
+          {
+            "formulaLatex": "x^2=-9"
+          },
+          {
+            "formulaLatex": "x=\\pm3i"
+          },
+          {
+            "formulaLatex": "(\\pm3i)^2+9=0"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-01.07",
+      "kind": "bridge",
+      "parentId": "B-01",
+      "level": 5,
+      "domainIds": [
+        "D-10",
+        "D-07"
+      ],
+      "formulaLatex": "\\overline{C([0,1])}^{\\,\\|\\cdot\\|_2}=L^2([0,1])",
+      "resultKind": "EXACT_REPRESENTATION",
+      "reversible": false,
+      "relatedIds": [
+        "B-03.13",
+        "B-05.06"
+      ],
+      "prerequisites": [
+        "B-05.03"
+      ],
+      "example": {
+        "formulaLatex": "f_n(x)=\\min(1,\\max(0,n(x-1/2)))",
+        "steps": [
+          {
+            "formulaLatex": "f=\\mathbf1_{(1/2,1]}"
+          },
+          {
+            "formulaLatex": "\\|f_n-f\\|_2^2=\\frac1{3n}\\quad(n\\ge2)"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-02.01",
+      "kind": "bridge",
+      "parentId": "B-02",
+      "level": 1,
+      "domainIds": [
+        "D-02"
+      ],
+      "formulaLatex": "x^2-5x+6=(x-2)(x-3)",
+      "resultKind": "EXACT_EQUIVALENCE",
+      "reversible": true,
+      "relatedIds": [
+        "B-02.03",
+        "B-02.05",
+        "B-12.11"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "x^2-5x+6=0",
+        "steps": [
+          {
+            "formulaLatex": "(x-2)(x-3)=0"
+          },
+          {
+            "formulaLatex": "x=2\\quad\\text{or}\\quad x=3"
+          },
+          {
+            "formulaLatex": "2^2-5(2)+6=0,\\quad3^2-5(3)+6=0"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-02.02",
+      "kind": "bridge",
+      "parentId": "B-02",
+      "level": 1,
+      "domainIds": [
+        "D-02"
+      ],
+      "formulaLatex": "ax+b=0\\iff x=-\\frac ba\\quad(a\\ne0)",
+      "resultKind": "EXACT_EQUIVALENCE",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-02.05",
+        "B-12.11"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "3x+6=0",
+        "steps": [
+          {
+            "formulaLatex": "3x=-6"
+          },
+          {
+            "formulaLatex": "x=-2"
+          },
+          {
+            "formulaLatex": "3(-2)+6=0"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-02.03",
+      "kind": "bridge",
+      "parentId": "B-02",
+      "level": 1,
+      "domainIds": [
+        "D-02"
+      ],
+      "formulaLatex": "ax^2+bx+c=a\\left(x+\\frac b{2a}\\right)^2-\\frac{b^2-4ac}{4a}",
+      "resultKind": "EXACT_EQUIVALENCE",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-02.01",
+        "B-01.04"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "x^2+6x+5=0",
+        "steps": [
+          {
+            "formulaLatex": "x^2+6x+9=4"
+          },
+          {
+            "formulaLatex": "(x+3)^2=4"
+          },
+          {
+            "formulaLatex": "x=-3\\pm2\\in\\{-5,-1\\}"
+          },
+          {
+            "formulaLatex": "25-30+5=0,\\quad1-6+5=0"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-02.04",
+      "kind": "bridge",
+      "parentId": "B-02",
+      "level": 1,
+      "domainIds": [
+        "D-02"
+      ],
+      "formulaLatex": "\\frac{A(x)}{B(x)}=0\\iff A(x)=0,\\quad B(x)\\ne0",
+      "resultKind": "EXACT_EQUIVALENCE",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-02.01",
+        "B-12.11"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "\\frac{x^2-1}{x-1}=0",
+        "steps": [
+          {
+            "formulaLatex": "x\\ne1"
+          },
+          {
+            "formulaLatex": "x^2-1=0\\implies x\\in\\{-1,1\\}"
+          },
+          {
+            "formulaLatex": "x=-1,\\qquad\\frac{(-1)^2-1}{-1-1}=0"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-02.05",
+      "kind": "bridge",
+      "parentId": "B-02",
+      "level": 1,
+      "domainIds": [
+        "D-02"
+      ],
+      "formulaLatex": "x(x-2)=0\\ \\not\\Longleftrightarrow\\ x-2=0",
+      "resultKind": "EXACT_EQUIVALENCE",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-02.01",
+        "B-12.11"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "x^2=2x",
+        "steps": [
+          {
+            "formulaLatex": "x(x-2)=0"
+          },
+          {
+            "formulaLatex": "x=0\\quad\\text{or}\\quad x=2"
+          },
+          {
+            "formulaLatex": "0^2=2(0),\\quad2^2=2(2)"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-02.06",
+      "kind": "bridge",
+      "parentId": "B-02",
+      "level": 1,
+      "domainIds": [
+        "D-02"
+      ],
+      "formulaLatex": "A=B\\implies A^2=B^2",
+      "resultKind": "EXACT_IMPLICATION",
+      "reversible": false,
+      "relatedIds": [
+        "B-02.01",
+        "B-12.11"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "\\sqrt{x+2}=x",
+        "steps": [
+          {
+            "formulaLatex": "x\\ge0"
+          },
+          {
+            "formulaLatex": "x+2=x^2\\implies(x-2)(x+1)=0"
+          },
+          {
+            "formulaLatex": "x=2,\\quad\\sqrt{2+2}=2"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-02.07",
+      "kind": "bridge",
+      "parentId": "B-02",
+      "level": 1,
+      "domainIds": [
+        "D-02"
+      ],
+      "formulaLatex": "u=\\phi(x),\\qquad P(\\phi(x))=0\\implies P(u)=0",
+      "resultKind": "EXACT_EQUIVALENCE",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-02.01",
+        "B-02.03"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "x^4-5x^2+4=0",
+        "steps": [
+          {
+            "formulaLatex": "u=x^2\\ge0,\\quad u^2-5u+4=0"
+          },
+          {
+            "formulaLatex": "(u-1)(u-4)=0"
+          },
+          {
+            "formulaLatex": "x\\in\\{-2,-1,1,2\\}"
+          },
+          {
+            "formulaLatex": "1-5+4=0,\\quad16-20+4=0"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-02.08",
+      "kind": "bridge",
+      "parentId": "B-02",
+      "level": 2,
+      "domainIds": [
+        "D-04"
+      ],
+      "formulaLatex": "[A\\mid b]\\sim[U\\mid c]",
+      "resultKind": "EXACT_EQUIVALENCE",
+      "reversible": true,
+      "relatedIds": [
+        "B-03.12",
+        "B-12.09"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "\\begin{cases}x+y=3\\\\2x-y=0\\end{cases}",
+        "steps": [
+          {
+            "formulaLatex": "R_2\\leftarrow R_2-2R_1:\\quad-3y=-6"
+          },
+          {
+            "formulaLatex": "y=2,\\quad x=1"
+          },
+          {
+            "formulaLatex": "1+2=3,\\quad2(1)-2=0"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-03.05",
+      "kind": "bridge",
+      "parentId": "B-03",
+      "level": 4,
+      "domainIds": [
+        "D-07",
+        "D-05"
+      ],
+      "formulaLatex": "\\iint f\\,d(x,y)=\\int\\!\\left(\\int f(x,y)\\,dy\\right)dx",
+      "resultKind": "EXACT_EQUIVALENCE",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-08.01"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "\\int_0^1\\int_0^1xy\\,dy\\,dx",
+        "steps": [
+          {
+            "formulaLatex": "xy\\ge0,\\quad(x,y)\\in[0,1]^2"
+          },
+          {
+            "formulaLatex": "\\left(\\int_0^1x\\,dx\\right)\\left(\\int_0^1y\\,dy\\right)=\\frac14"
+          },
+          {
+            "formulaLatex": "\\int_0^1\\frac x2\\,dx=\\frac14"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-03.07",
+      "kind": "bridge",
+      "parentId": "B-03",
+      "level": 3,
+      "domainIds": [
+        "D-08"
+      ],
+      "formulaLatex": "y\\prime=g(x)h(y)\\implies\\frac{dy}{h(y)}=g(x)\\,dx",
+      "resultKind": "EXACT_EQUIVALENCE",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-02.05",
+        "B-04.07"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "y\\prime=2xy,\\quad y(0)=1",
+        "steps": [
+          {
+            "formulaLatex": "\\frac{dy}{y}=2x\\,dx"
+          },
+          {
+            "formulaLatex": "\\log|y|=x^2+C\\implies y=Ke^{x^2}"
+          },
+          {
+            "formulaLatex": "y=e^{x^2},\\quad y\\prime=2xe^{x^2},\\quad y(0)=1"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-03.12",
+      "kind": "bridge",
+      "parentId": "B-03",
+      "level": 3,
+      "domainIds": [
+        "D-04",
+        "D-10"
+      ],
+      "formulaLatex": "A=UDU^*,\\qquad U^*U=I",
+      "resultKind": "EXACT_REPRESENTATION",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-05.07",
+        "B-05.03"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "A=\\begin{pmatrix}2&1\\\\1&2\\end{pmatrix}",
+        "steps": [
+          {
+            "formulaLatex": "u_1=\\frac1{\\sqrt2}(1,1),\\quad u_2=\\frac1{\\sqrt2}(1,-1)"
+          },
+          {
+            "formulaLatex": "Au_1=3u_1,\\quad Au_2=u_2"
+          },
+          {
+            "formulaLatex": "U^*AU=\\operatorname{diag}(3,1)"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-03.13",
+      "kind": "bridge",
+      "parentId": "B-03",
+      "level": 5,
+      "domainIds": [
+        "D-10",
+        "D-07"
+      ],
+      "formulaLatex": "f=\\sum_{n\\in\\mathbb Z}\\langle e_n,f\\rangle e_n\\quad\\text{in }L^2",
+      "resultKind": "EXACT_REPRESENTATION",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-04.11",
+        "B-04.05"
+      ],
+      "prerequisites": [
+        "B-05.03",
+        "B-01.07"
+      ],
+      "example": {
+        "formulaLatex": "f(x)=\\cos x",
+        "steps": [
+          {
+            "formulaLatex": "\\cos x=\\frac12e^{ix}+\\frac12e^{-ix}"
+          },
+          {
+            "formulaLatex": "c_{1}=c_{-1}=\\frac{\\sqrt{2\\pi}}2"
+          },
+          {
+            "formulaLatex": "\\|\\cos x\\|_2^2=\\pi=|c_1|^2+|c_{-1}|^2"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-04.01",
+      "kind": "bridge",
+      "parentId": "B-04",
+      "level": 2,
+      "domainIds": [
+        "D-03",
+        "D-05"
+      ],
+      "formulaLatex": "x=r\\cos\\theta,\\quad y=r\\sin\\theta,\\quad dx\\,dy=r\\,dr\\,d\\theta",
+      "resultKind": "EXACT_REPRESENTATION",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-03.05"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "\\iint_{x^2+y^2\\le1}1\\,dx\\,dy",
+        "steps": [
+          {
+            "formulaLatex": "0\\le r\\le1,\\quad0\\le\\theta<2\\pi"
+          },
+          {
+            "formulaLatex": "\\int_0^{2\\pi}\\int_0^1r\\,dr\\,d\\theta=\\pi"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-04.05",
+      "kind": "bridge",
+      "parentId": "B-04",
+      "level": 4,
+      "domainIds": [
+        "D-08",
+        "D-10"
+      ],
+      "formulaLatex": "\\widehat{f\\prime}(\\xi)=i\\xi\\widehat f(\\xi)",
+      "resultKind": "EXACT_REPRESENTATION",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-03.13",
+        "B-04.06"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "-u\\prime\\prime+u=f\\quad\\text{on }\\mathbb R",
+        "steps": [
+          {
+            "formulaLatex": "(\\xi^2+1)\\widehat u=\\widehat f"
+          },
+          {
+            "formulaLatex": "\\widehat u=\\frac{\\widehat f}{1+\\xi^2}"
+          },
+          {
+            "formulaLatex": "\\widehat{(-u\\prime\\prime+u)}=(1+\\xi^2)\\widehat u=\\widehat f"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-04.06",
+      "kind": "bridge",
+      "parentId": "B-04",
+      "level": 4,
+      "domainIds": [
+        "D-08",
+        "D-10"
+      ],
+      "formulaLatex": "\\widehat{f*g}=\\widehat f\\,\\widehat g",
+      "resultKind": "EXACT_REPRESENTATION",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-04.05"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "f(x)=g(x)=e^{-x}\\mathbf1_{[0,\\infty)}(x)",
+        "steps": [
+          {
+            "formulaLatex": "(f*g)(x)=xe^{-x}\\mathbf1_{[0,\\infty)}(x)"
+          },
+          {
+            "formulaLatex": "\\widehat f(\\xi)=\\frac1{1+i\\xi},\\quad\\widehat{f*g}(\\xi)=\\frac1{(1+i\\xi)^2}"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-04.07",
+      "kind": "bridge",
+      "parentId": "B-04",
+      "level": 3,
+      "domainIds": [
+        "D-08"
+      ],
+      "formulaLatex": "\\mathcal L\\{y\\prime\\}(s)=sY(s)-y(0^+)",
+      "resultKind": "EXACT_REPRESENTATION",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-03.07",
+        "B-04.05"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "y\\prime+y=1,\\quad y(0)=0",
+        "steps": [
+          {
+            "formulaLatex": "sY+Y=\\frac1s"
+          },
+          {
+            "formulaLatex": "Y=\\frac1{s(s+1)}=\\frac1s-\\frac1{s+1}"
+          },
+          {
+            "formulaLatex": "y=1-e^{-t},\\quad y\\prime+y=1,\\quad y(0)=0"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-04.11",
+      "kind": "bridge",
+      "parentId": "B-04",
+      "level": 2,
+      "domainIds": [
+        "D-01",
+        "D-03"
+      ],
+      "formulaLatex": "e^{i\\theta}=\\cos\\theta+i\\sin\\theta",
+      "resultKind": "EXACT_EQUIVALENCE",
+      "reversible": true,
+      "relatedIds": [
+        "B-01.04",
+        "B-03.13"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "e^{i\\alpha}e^{i\\beta}=e^{i(\\alpha+\\beta)}",
+        "steps": [
+          {
+            "formulaLatex": "(\\cos\\alpha+i\\sin\\alpha)(\\cos\\beta+i\\sin\\beta)"
+          },
+          {
+            "formulaLatex": "\\cos(\\alpha+\\beta)=\\cos\\alpha\\cos\\beta-\\sin\\alpha\\sin\\beta"
+          },
+          {
+            "formulaLatex": "\\alpha=\\beta=\\pi/4:\\quad0=\\tfrac12-\\tfrac12"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-05.01",
+      "kind": "bridge",
+      "parentId": "B-05",
+      "level": 2,
+      "domainIds": [
+        "D-01"
+      ],
+      "formulaLatex": "z\\overline z=|z|^2,\\qquad\\frac1z=\\frac{\\overline z}{|z|^2}\\ (z\\ne0)",
+      "resultKind": "EXACT_REPRESENTATION",
+      "reversible": true,
+      "relatedIds": [
+        "B-05.03",
+        "B-01.04"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "\\frac1{1+i}",
+        "steps": [
+          {
+            "formulaLatex": "\\frac1{1+i}=\\frac{1-i}{(1+i)(1-i)}"
+          },
+          {
+            "formulaLatex": "\\frac1{1+i}=\\frac{1-i}{2}"
+          },
+          {
+            "formulaLatex": "(1+i)\\frac{1-i}{2}=1"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-05.03",
+      "kind": "bridge",
+      "parentId": "B-05",
+      "level": 3,
+      "domainIds": [
+        "D-04",
+        "D-10"
+      ],
+      "formulaLatex": "\\langle x,y\\rangle=\\sum_j\\overline{x_j}y_j",
+      "resultKind": "EXACT_REPRESENTATION",
+      "reversible": false,
+      "relatedIds": [
+        "B-05.04",
+        "B-10.02",
+        "B-01.07"
+      ],
+      "prerequisites": [
+        "B-05.01"
+      ],
+      "example": {
+        "formulaLatex": "x=(1,i),\\quad y=(i,1)",
+        "steps": [
+          {
+            "formulaLatex": "\\langle x,y\\rangle=1\\cdot i+(-i)\\cdot1=0"
+          },
+          {
+            "formulaLatex": "\\langle x,x\\rangle=1+(-i)i=2"
+          },
+          {
+            "formulaLatex": "\\|x\\|=\\sqrt2,\\quad x\\perp y"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-05.04",
+      "kind": "bridge",
+      "parentId": "B-05",
+      "level": 3,
+      "domainIds": [
+        "D-04",
+        "D-10"
+      ],
+      "formulaLatex": "P_uv=\\frac{\\langle u,v\\rangle}{\\langle u,u\\rangle}u",
+      "resultKind": "EXACT_REPRESENTATION",
+      "reversible": false,
+      "relatedIds": [
+        "B-05.03",
+        "B-11.06",
+        "B-10.02"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "u=(1,i),\\quad v=(2,0)",
+        "steps": [
+          {
+            "formulaLatex": "\\langle u,v\\rangle=2,\\quad\\langle u,u\\rangle=2"
+          },
+          {
+            "formulaLatex": "P_uv=(1,i),\\quad v-P_uv=(1,-i)"
+          },
+          {
+            "formulaLatex": "\\langle u,v-P_uv\\rangle=1+(-i)(-i)=0"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-05.06",
+      "kind": "bridge",
+      "parentId": "B-05",
+      "level": 5,
+      "domainIds": [
+        "D-10"
+      ],
+      "formulaLatex": "F(x)=\\langle v,x\\rangle\\quad\\forall x\\in H",
+      "resultKind": "EXACT_REPRESENTATION",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-05.07"
+      ],
+      "prerequisites": [
+        "B-01.07",
+        "B-05.03"
+      ],
+      "example": {
+        "formulaLatex": "F(x_1,x_2)=2x_1-ix_2",
+        "steps": [
+          {
+            "formulaLatex": "v=(2,i)"
+          },
+          {
+            "formulaLatex": "\\langle v,x\\rangle=2x_1-ix_2=F(x)"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-05.07",
+      "kind": "bridge",
+      "parentId": "B-05",
+      "level": 4,
+      "domainIds": [
+        "D-04",
+        "D-10"
+      ],
+      "formulaLatex": "\\langle Ax,y\\rangle=\\langle x,A^*y\\rangle,\\quad A^*=\\overline A^{\\mathsf T}",
+      "resultKind": "EXACT_REPRESENTATION",
+      "reversible": true,
+      "relatedIds": [
+        "B-03.12",
+        "B-05.03"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "A=\\begin{pmatrix}1&i\\\\0&2\\end{pmatrix}",
+        "steps": [
+          {
+            "formulaLatex": "A^*=\\begin{pmatrix}1&0\\\\-i&2\\end{pmatrix}"
+          },
+          {
+            "formulaLatex": "\\overline{Ax}^{\\mathsf T}y=\\overline{x}^{\\mathsf T}\\overline A^{\\mathsf T}y"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-06.03",
+      "kind": "bridge",
+      "parentId": "B-06",
+      "level": 3,
+      "domainIds": [
+        "D-03",
+        "D-05"
+      ],
+      "formulaLatex": "\\int_\\Omega\\nabla\\!\\cdot F\\,dV=\\int_{\\partial\\Omega}F\\!\\cdot n\\,dS",
+      "resultKind": "EXACT_EQUIVALENCE",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-04.01"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "F(x,y)=(x,y),\\quad\\Omega=\\{x^2+y^2\\le1\\}",
+        "steps": [
+          {
+            "formulaLatex": "\\nabla\\!\\cdot F=2"
+          },
+          {
+            "formulaLatex": "\\int_\\Omega2\\,dA=2\\pi"
+          },
+          {
+            "formulaLatex": "F\\!\\cdot n=1\\text{ on }\\partial\\Omega,\\quad\\int_{\\partial\\Omega}1\\,ds=2\\pi"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-06.05",
+      "kind": "bridge",
+      "parentId": "B-06",
+      "level": 4,
+      "domainIds": [
+        "D-09"
+      ],
+      "formulaLatex": "\\oint_\\gamma f(z)\\,dz=2\\pi i\\sum_k\\operatorname{Res}(f,z_k)",
+      "resultKind": "EXACT_EQUIVALENCE",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-01.04",
+        "B-04.11"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "\\oint_{|z|=2}\\frac{dz}{z-i}",
+        "steps": [
+          {
+            "formulaLatex": "\\operatorname{Res}\\left(\\frac1{z-i},i\\right)=1"
+          },
+          {
+            "formulaLatex": "\\oint_{|z|=2}\\frac{dz}{z-i}=2\\pi i"
+          },
+          {
+            "formulaLatex": "\\frac1{z-i}=\\sum_{n\\ge0}\\frac{i^n}{z^{n+1}}\\quad(|z|=2)"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-07.02",
+      "kind": "bridge",
+      "parentId": "B-07",
+      "level": 3,
+      "domainIds": [
+        "D-05"
+      ],
+      "formulaLatex": "f(x)=\\sum_{k=0}^n\\frac{f^{(k)}(a)}{k!}(x-a)^k+R_n(x)",
+      "resultKind": "APPROX_WITH_ERROR",
+      "reversible": false,
+      "relatedIds": [
+        "B-12.02"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "e^{0.2}",
+        "steps": [
+          {
+            "formulaLatex": "P_2(0.2)=1+0.2+\\frac{0.2^2}2=1.22"
+          },
+          {
+            "formulaLatex": "0<R_2(0.2)\\le e^{0.2}\\frac{0.2^3}{6}<0.00163"
+          },
+          {
+            "formulaLatex": "1.22<e^{0.2}<1.22163"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-08.01",
+      "kind": "bridge",
+      "parentId": "B-08",
+      "level": 4,
+      "domainIds": [
+        "D-07"
+      ],
+      "formulaLatex": "\\lim_n\\int f_n=\\int\\lim_n f_n",
+      "resultKind": "EXACT_EQUIVALENCE",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-03.05"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "f_n(x)=x^n\\quad\\text{on }[0,1]",
+        "steps": [
+          {
+            "formulaLatex": "x^n\\to0\\text{ a.e.},\\quad |x^n|\\le1"
+          },
+          {
+            "formulaLatex": "\\lim_n\\int_0^1x^n\\,dx=\\int_0^10\\,dx=0"
+          },
+          {
+            "formulaLatex": "\\int_0^1x^n\\,dx=\\frac1{n+1}\\to0"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-09.01",
+      "kind": "bridge",
+      "parentId": "B-09",
+      "level": 2,
+      "domainIds": [
+        "D-05"
+      ],
+      "formulaLatex": "f(a)f(b)<0\\implies\\exists c\\in(a,b):f(c)=0",
+      "resultKind": "EXISTENCE",
+      "reversible": false,
+      "relatedIds": [
+        "B-12.01",
+        "B-12.02"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "f(x)=x^3-x-1",
+        "steps": [
+          {
+            "formulaLatex": "f(1)=-1,\\quad f(2)=5"
+          },
+          {
+            "formulaLatex": "\\exists c\\in(1,2):f(c)=0"
+          },
+          {
+            "formulaLatex": "f\\prime(x)=3x^2-1>0\\quad(x\\in[1,2])"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-09.03",
+      "kind": "bridge",
+      "parentId": "B-09",
+      "level": 4,
+      "domainIds": [
+        "D-10",
+        "D-12"
+      ],
+      "formulaLatex": "d(x_n,x^*)\\le\\frac q{1-q}d(x_n,x_{n-1})",
+      "resultKind": "EXISTENCE_UNIQUENESS",
+      "reversible": false,
+      "relatedIds": [
+        "B-12.02",
+        "B-09.01"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "x=\\cos x,\\quad X=[0,1]",
+        "steps": [
+          {
+            "formulaLatex": "\\cos([0,1])\\subset[0,1],\\quad|T\\prime|\\le\\sin1<1"
+          },
+          {
+            "formulaLatex": "x_{n+1}=\\cos x_n"
+          },
+          {
+            "formulaLatex": "|x_n-x^*|\\le\\frac{\\sin1}{1-\\sin1}|x_n-x_{n-1}|"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-09.09",
+      "kind": "bridge",
+      "parentId": "B-09",
+      "level": 5,
+      "domainIds": [
+        "D-10",
+        "D-08"
+      ],
+      "formulaLatex": "a(u,v)=F(v)\\quad\\forall v\\in H",
+      "resultKind": "EXISTENCE_UNIQUENESS",
+      "reversible": false,
+      "relatedIds": [
+        "B-11.05",
+        "B-10.02"
+      ],
+      "prerequisites": [
+        "B-01.07"
+      ],
+      "example": {
+        "formulaLatex": "-u\\prime\\prime=f,\\quad u(0)=u(1)=0,\\quad f\\in L^2(0,1)",
+        "steps": [
+          {
+            "formulaLatex": "H=H_0^1(0,1),\\quad a(u,v)=\\int_0^1u\\prime v\\prime"
+          },
+          {
+            "formulaLatex": "F(v)=\\int_0^1fv,\\quad|F(v)|\\le C\\|f\\|_2\\|v\\prime\\|_2"
+          },
+          {
+            "formulaLatex": "a(v,v)=\\|v\\prime\\|_2^2"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-10.02",
+      "kind": "bridge",
+      "parentId": "B-10",
+      "level": 3,
+      "domainIds": [
+        "D-04",
+        "D-10"
+      ],
+      "formulaLatex": "|\\langle x,y\\rangle|\\le\\|x\\|\\,\\|y\\|",
+      "resultKind": "BOUND_ONLY",
+      "reversible": false,
+      "relatedIds": [
+        "B-05.03",
+        "B-05.04"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "x=(1,2),\\quad y=(3,4)",
+        "steps": [
+          {
+            "formulaLatex": "\\langle x,y\\rangle=11,\\quad\\|x\\|=\\sqrt5,\\quad\\|y\\|=5"
+          },
+          {
+            "formulaLatex": "11\\le5\\sqrt5\\quad\\Longleftrightarrow\\quad121\\le125"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-11.05",
+      "kind": "bridge",
+      "parentId": "B-11",
+      "level": 4,
+      "domainIds": [
+        "D-12",
+        "D-08"
+      ],
+      "formulaLatex": "\\frac{\\partial L}{\\partial y}-\\frac d{dx}\\frac{\\partial L}{\\partial y\\prime}=0",
+      "resultKind": "NECESSARY_CONDITION",
+      "reversible": false,
+      "relatedIds": [
+        "B-09.09",
+        "B-11.06"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "J[y]=\\int_0^1(y\\prime)^2\\,dx,\\quad y(0)=0,\\ y(1)=1",
+        "steps": [
+          {
+            "formulaLatex": "\\frac d{dx}(2y\\prime)=0\\implies y\\prime\\prime=0"
+          },
+          {
+            "formulaLatex": "y(x)=x"
+          },
+          {
+            "formulaLatex": "J[x+h]=1+\\int_0^1(h\\prime)^2\\,dx\\ge1\\quad(h(0)=h(1)=0)"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-11.06",
+      "kind": "bridge",
+      "parentId": "B-11",
+      "level": 3,
+      "domainIds": [
+        "D-04",
+        "D-12"
+      ],
+      "formulaLatex": "\\min_c\\|Ac-b\\|_2\\quad\\Longrightarrow\\quad A^*(Ac-b)=0",
+      "resultKind": "ALGORITHM",
+      "reversible": "conditional",
+      "relatedIds": [
+        "B-05.04",
+        "B-12.09"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "A=\\begin{pmatrix}1\\\\1\\end{pmatrix},\\quad b=\\begin{pmatrix}1\\\\3\\end{pmatrix}",
+        "steps": [
+          {
+            "formulaLatex": "2c=4\\implies c=2"
+          },
+          {
+            "formulaLatex": "b-Ac=(-1,1),\\quad A^*(b-Ac)=0"
+          },
+          {
+            "formulaLatex": "(c-1)^2+(c-3)^2=2(c-2)^2+2"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-12.01",
+      "kind": "bridge",
+      "parentId": "B-12",
+      "level": 2,
+      "domainIds": [
+        "D-12",
+        "D-05"
+      ],
+      "formulaLatex": "[a_n,b_n],\\quad b_n-a_n=\\frac{b_0-a_0}{2^n}",
+      "resultKind": "APPROX_WITH_ERROR",
+      "reversible": false,
+      "relatedIds": [
+        "B-09.01",
+        "B-12.02"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "f(x)=x^2-2,\\quad[a_0,b_0]=[1,2]",
+        "steps": [
+          {
+            "formulaLatex": "m_0=1.5,\\quad f(m_0)=0.25"
+          },
+          {
+            "formulaLatex": "[a_1,b_1]=[1,1.5]"
+          },
+          {
+            "formulaLatex": "|1.25-\\sqrt2|\\le0.25"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-12.02",
+      "kind": "bridge",
+      "parentId": "B-12",
+      "level": 3,
+      "domainIds": [
+        "D-12",
+        "D-05"
+      ],
+      "formulaLatex": "x_{n+1}=x_n-\\frac{f(x_n)}{f\\prime(x_n)}",
+      "resultKind": "ALGORITHM",
+      "reversible": false,
+      "relatedIds": [
+        "B-09.03",
+        "B-12.01",
+        "B-12.09"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "f(x)=x^2-2,\\quad x_0=1",
+        "steps": [
+          {
+            "formulaLatex": "x_{n+1}=\\frac12\\left(x_n+\\frac2{x_n}\\right)"
+          },
+          {
+            "formulaLatex": "x_1=\\frac32,\\quad x_2=\\frac{17}{12}"
+          },
+          {
+            "formulaLatex": "f(17/12)=\\frac1{144},\\quad|17/12-\\sqrt2|=\\frac{1/144}{17/12+\\sqrt2}"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-12.09",
+      "kind": "bridge",
+      "parentId": "B-12",
+      "level": 3,
+      "domainIds": [
+        "D-04",
+        "D-12"
+      ],
+      "formulaLatex": "\\|x-\\widetilde x\\|\\le\\|A^{-1}\\|\\,\\|b-A\\widetilde x\\|",
+      "resultKind": "BOUND_ONLY",
+      "reversible": false,
+      "relatedIds": [
+        "B-02.08",
+        "B-11.06"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "A=\\operatorname{diag}(1,10^{-6}),\\quad b=(1,10^{-6}),\\quad\\widetilde x=(1,0)",
+        "steps": [
+          {
+            "formulaLatex": "r=b-A\\widetilde x=(0,10^{-6})"
+          },
+          {
+            "formulaLatex": "x=(1,1),\\quad\\|x-\\widetilde x\\|_2=1"
+          },
+          {
+            "formulaLatex": "\\|A^{-1}\\|_2\\|r\\|_2=10^6\\cdot10^{-6}=1"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "B-12.11",
+      "kind": "bridge",
+      "parentId": "B-12",
+      "level": 1,
+      "domainIds": [
+        "D-02",
+        "D-12"
+      ],
+      "formulaLatex": "\\text{candidate }r:\\quad L(r)-R(r)=0",
+      "resultKind": "ALGORITHM",
+      "reversible": false,
+      "relatedIds": [
+        "B-02.06",
+        "B-02.04",
+        "B-12.09"
+      ],
+      "prerequisites": [],
+      "example": {
+        "formulaLatex": "\\sqrt{x+2}=x,\\quad r=-1",
+        "steps": [
+          {
+            "formulaLatex": "\\sqrt{-1+2}=1\\ne-1"
+          },
+          {
+            "formulaLatex": "r=-1\\text{ is rejected},\\qquad\\sqrt{2+2}=2"
+          }
+        ]
+      },
+      "sources": [
+        "docs/atlante_ponti_matematici-ITA.md"
+      ],
+      "status": "review"
+    }
+  ],
+  "routes": [
+    {
+      "id": "R-ALG",
+      "bridgeIds": [
+        "B-02.02",
+        "B-02.01",
+        "B-02.03",
+        "B-01.04",
+        "B-12.11"
+      ]
+    },
+    {
+      "id": "R-HILBERT",
+      "bridgeIds": [
+        "B-01.04",
+        "B-05.01",
+        "B-05.03",
+        "B-05.04",
+        "B-01.07",
+        "B-05.06",
+        "B-03.13",
+        "B-04.05"
+      ]
+    },
+    {
+      "id": "R-ODE",
+      "bridgeIds": [
+        "B-03.07",
+        "B-04.07",
+        "B-04.05"
+      ]
+    },
+    {
+      "id": "R-NUM",
+      "bridgeIds": [
+        "B-09.01",
+        "B-12.01",
+        "B-12.02",
+        "B-12.09"
+      ]
+    }
+  ]
+}

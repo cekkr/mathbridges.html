@@ -1,0 +1,4 @@
+# Preserve upstream license line endings without flagging CRLF as trailing space.
+libs/THIRD_PARTY_LICENSES.txt whitespace=cr-at-eol
+# The copied atlas uses trailing spaces for Markdown hard line breaks.
+libs/sources/atlas-ita.md whitespace=-blank-at-eol

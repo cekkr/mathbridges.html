@@ -1,0 +1,839 @@
+{
+  "categories": {
+    "B-01": {
+      "title": "Extend the universe",
+      "summary": "When the current number system or space is too small."
+    },
+    "B-02": {
+      "title": "Rewrite & simplify",
+      "summary": "Find a useful form while tracking the solution set."
+    },
+    "B-03": {
+      "title": "Separate & decompose",
+      "summary": "Break a problem into simpler, independent parts."
+    },
+    "B-04": {
+      "title": "Change representation",
+      "summary": "Make difficult operations simpler in another representation."
+    },
+    "B-05": {
+      "title": "Geometry & duality",
+      "summary": "Use conjugation, orthogonality and dual descriptions."
+    },
+    "B-06": {
+      "title": "Local to global",
+      "summary": "Connect derivatives, boundaries and global quantities."
+    },
+    "B-07": {
+      "title": "Approximate & linearize",
+      "summary": "Trade exact formulas for controlled approximations."
+    },
+    "B-08": {
+      "title": "Exchange infinite operations",
+      "summary": "Check when limits, sums and integrals may be exchanged."
+    },
+    "B-09": {
+      "title": "Existence & uniqueness",
+      "summary": "Establish that a solution exists before calculating it."
+    },
+    "B-10": {
+      "title": "Bound & control",
+      "summary": "Control a quantity using inequalities and estimates."
+    },
+    "B-11": {
+      "title": "Optimize & vary",
+      "summary": "Connect equations, energy and minimization."
+    },
+    "B-12": {
+      "title": "Compute & verify",
+      "summary": "Turn theory into algorithms and check their answers."
+    }
+  },
+  "domains": {
+    "D-01": {
+      "title": "Numbers & complex numbers"
+    },
+    "D-02": {
+      "title": "Symbolic algebra"
+    },
+    "D-03": {
+      "title": "Geometry & trigonometry"
+    },
+    "D-04": {
+      "title": "Linear algebra"
+    },
+    "D-05": {
+      "title": "Calculus"
+    },
+    "D-07": {
+      "title": "Measure & function spaces"
+    },
+    "D-08": {
+      "title": "Differential equations"
+    },
+    "D-09": {
+      "title": "Complex analysis"
+    },
+    "D-10": {
+      "title": "Hilbert spaces & operators"
+    },
+    "D-12": {
+      "title": "Optimization & numerics"
+    }
+  },
+  "bridges": {
+    "B-01.04": {
+      "title": "Extend to complex numbers",
+      "summary": "Find roots that do not exist over the reals.",
+      "when": "A real quadratic has a negative discriminant.",
+      "hypotheses": [
+        "Complex solutions are permitted by the problem."
+      ],
+      "guarantees": "Every nonconstant complex polynomial has a complex root.",
+      "pitfalls": "Changing the domain changes the problem: a complex root is not a real solution.",
+      "steps": [
+        "Isolate the square.",
+        "Use i² = −1 and keep both roots.",
+        "Substitute both roots into the original equation."
+      ]
+    },
+    "B-01.07": {
+      "title": "Complete an inner product space",
+      "summary": "Add the missing limits of Cauchy sequences.",
+      "when": "A space has geometry but is not complete in its induced norm.",
+      "hypotheses": [
+        "A positive definite inner product is defined",
+        "Use its induced norm for completion."
+      ],
+      "guarantees": "A dense isometric embedding into a Hilbert space, unique up to isometry.",
+      "pitfalls": "L² convergence need not imply convergence at every point.",
+      "steps": [
+        "The limit is a discontinuous step function (up to a null set).",
+        "The error tends to zero; the limit belongs to L²."
+      ]
+    },
+    "B-02.01": {
+      "title": "Factor an expression",
+      "summary": "Turn a polynomial into a product of simpler factors.",
+      "when": "You need the roots of a polynomial or a useful cancellation.",
+      "hypotheses": [
+        "Factorization is an identity over the chosen field",
+        "For the zero-product rule, work over a field such as ℝ or ℂ."
+      ],
+      "guarantees": "The polynomial and its factorization have the same values and roots.",
+      "pitfalls": "Canceling a factor in a fraction still requires excluding its zeros.",
+      "steps": [
+        "Find two numbers with sum −5 and product 6.",
+        "A product is zero only if a factor is zero.",
+        "Check both roots in the original polynomial."
+      ]
+    },
+    "B-02.02": {
+      "title": "Collect terms & isolate",
+      "summary": "Combine like terms and isolate an unknown.",
+      "when": "The unknown appears linearly.",
+      "hypotheses": [
+        "Add the same expression to both sides",
+        "Divide only by a known nonzero coefficient."
+      ],
+      "guarantees": "Reversible steps preserve the solution set.",
+      "pitfalls": "If the coefficient is zero, distinguish an identity from a contradiction.",
+      "steps": [
+        "Subtract 6 from both sides.",
+        "Divide by 3, which is nonzero.",
+        "Verify by substitution."
+      ]
+    },
+    "B-02.03": {
+      "title": "Complete the square",
+      "summary": "Rewrite a quadratic as a shifted square.",
+      "when": "Factoring is difficult, or you want to see the discriminant.",
+      "hypotheses": [
+        "The quadratic coefficient a is nonzero",
+        "Choose the required real or complex domain."
+      ],
+      "guarantees": "An exact identity leading to the quadratic formula.",
+      "pitfalls": "Keep both square-root signs; a negative discriminant has no real roots.",
+      "steps": [
+        "Add 9 after moving the constant.",
+        "Recognize the perfect square.",
+        "Take both square roots and isolate x.",
+        "Check both solutions."
+      ]
+    },
+    "B-02.04": {
+      "title": "Clear denominators",
+      "summary": "Replace a rational equation with a polynomial on its domain.",
+      "when": "Fractions hide a simpler polynomial equation.",
+      "hypotheses": [
+        "Record every original denominator",
+        "Exclude their zeros before multiplying."
+      ],
+      "guarantees": "Equivalent equations on the restricted domain.",
+      "pitfalls": "Simplification must not restore excluded inputs.",
+      "steps": [
+        "Record the original denominator restriction.",
+        "Find candidates from the numerator.",
+        "Discard 1; only −1 satisfies the original equation."
+      ]
+    },
+    "B-02.05": {
+      "title": "Divide with a case split",
+      "summary": "Separate the zero case before canceling an unknown factor.",
+      "when": "You are about to divide by a variable expression.",
+      "hypotheses": [
+        "The divisor must be nonzero on the branch where division is used."
+      ],
+      "guarantees": "The union of the zero and nonzero branches preserves all solutions.",
+      "pitfalls": "Dividing by x immediately loses the possible root x = 0.",
+      "steps": [
+        "Bring all terms to one side and factor.",
+        "Treat the zero factor and the nonzero branch.",
+        "Both roots satisfy the original equation."
+      ]
+    },
+    "B-02.06": {
+      "title": "Square both sides",
+      "summary": "Remove a radical and generate candidate solutions.",
+      "when": "An equation contains square roots.",
+      "hypotheses": [
+        "For real square roots, the radicand is nonnegative",
+        "Check the sign of the other side",
+        "Verify all candidates in the original equation."
+      ],
+      "guarantees": "Every original solution survives squaring; the converse needs checking.",
+      "pitfalls": "Squaring can introduce extraneous roots.",
+      "steps": [
+        "The square root is nonnegative, so x must be too.",
+        "Square to obtain candidates 2 and −1.",
+        "Reject −1 and verify 2 in the original equation."
+      ]
+    },
+    "B-02.07": {
+      "title": "Substitute a new variable",
+      "summary": "Reveal a familiar equation inside an unfamiliar one.",
+      "when": "Repeated powers or a repeated expression hide a simpler structure.",
+      "hypotheses": [
+        "Track the range of the substitution",
+        "Recover every permitted original value from each new value."
+      ],
+      "guarantees": "An equivalent problem when the range and inverse branches are retained.",
+      "pitfalls": "For u = x² over ℝ, negative u has no preimage and positive u usually has two.",
+      "steps": [
+        "Replace the repeated square by u.",
+        "Factor the quadratic.",
+        "Invert x² = 1 and x² = 4, keeping both signs.",
+        "All four candidates satisfy the original even polynomial."
+      ]
+    },
+    "B-02.08": {
+      "title": "Gaussian elimination",
+      "summary": "Use reversible row operations to solve linear systems.",
+      "when": "Several unknowns appear linearly.",
+      "hypotheses": [
+        "Swap rows, add multiples, or scale by a nonzero number",
+        "Track pivots and any parameter cases."
+      ],
+      "guarantees": "An equivalent linear system with the same solution set.",
+      "pitfalls": "A zero pivot may require a row swap; a zero row does not automatically mean inconsistency.",
+      "steps": [
+        "Eliminate x from the second row.",
+        "Back-substitute into the first equation.",
+        "Check both equations."
+      ]
+    },
+    "B-03.05": {
+      "title": "Fubini & Tonelli",
+      "summary": "Replace a product integral by iterated integrals.",
+      "when": "A multivariable integral becomes easier one variable at a time.",
+      "hypotheses": [
+        "Measurability on σ-finite product measure spaces",
+        "Fubini: absolute integrability",
+        "Tonelli: nonnegative integrand, possibly infinite integral."
+      ],
+      "guarantees": "The iterated and product integrals agree under the appropriate theorem.",
+      "pitfalls": "Conditional convergence alone does not justify exchanging integration order.",
+      "steps": [
+        "The integrand is continuous and nonnegative on a compact square.",
+        "The product integrand and product domain allow factorization.",
+        "Direct iterated integration confirms the value."
+      ]
+    },
+    "B-03.07": {
+      "title": "Separate variables",
+      "summary": "Turn a separable differential equation into two integrals.",
+      "when": "The derivative is a product of a function of x and a function of y.",
+      "hypotheses": [
+        "Work where h(y) is nonzero",
+        "Check constant solutions h(y) = 0 separately",
+        "Retain initial conditions and solution intervals."
+      ],
+      "guarantees": "An implicit solution on each valid branch.",
+      "pitfalls": "Division can lose equilibrium solutions.",
+      "steps": [
+        "On the nonzero branch, separate the variables.",
+        "Integrate and exponentiate; y = 0 is also an equilibrium.",
+        "The initial condition selects K = 1; verify the derivative."
+      ]
+    },
+    "B-03.12": {
+      "title": "Diagonalize a normal matrix",
+      "summary": "Decouple a linear operator into orthogonal eigenmodes.",
+      "when": "Powers or coupled linear systems are difficult in the current basis.",
+      "hypotheses": [
+        "A is a finite-dimensional complex normal matrix: A*A = AA*."
+      ],
+      "guarantees": "A unitary eigenbasis exists; Hermitian matrices have real eigenvalues.",
+      "pitfalls": "Not every matrix is diagonalizable, or unitarily diagonalizable.",
+      "steps": [
+        "Choose orthonormal eigenvectors of this symmetric matrix.",
+        "Verify the two eigenvalues directly.",
+        "The transformed operator acts separately on each coordinate."
+      ]
+    },
+    "B-03.13": {
+      "title": "Fourier series",
+      "summary": "Represent a periodic L² function by orthonormal modes.",
+      "when": "You need frequency coordinates or a finite-mode approximation.",
+      "hypotheses": [
+        "f belongs to L²([−π, π])",
+        "Use the complete basis eₙ(x) = exp(inx)/√(2π)."
+      ],
+      "guarantees": "The series converges in L² norm and Parseval preserves energy.",
+      "pitfalls": "L² convergence does not guarantee convergence everywhere or uniformly.",
+      "steps": [
+        "Euler’s identity gives exactly two modes.",
+        "Account for the normalized basis.",
+        "Verify Parseval by integrating cos² on [−π, π]."
+      ]
+    },
+    "B-04.01": {
+      "title": "Use polar coordinates",
+      "summary": "Expose radial symmetry and simplify planar integrals.",
+      "when": "The expression depends on x² + y² or the region is circular.",
+      "hypotheses": [
+        "Choose a domain that handles angle branches and the origin",
+        "Use the Jacobian r for area integrals."
+      ],
+      "guarantees": "An equivalent coordinate description with the correct measure.",
+      "pitfalls": "Forgetting the Jacobian changes the integral.",
+      "steps": [
+        "The disk becomes a rectangle in (r, θ) parameters.",
+        "Include r and integrate; this agrees with the disk area."
+      ]
+    },
+    "B-04.05": {
+      "title": "Fourier transform",
+      "summary": "Turn differentiation into multiplication in frequency.",
+      "when": "A constant-coefficient differential operator is hard to invert.",
+      "hypotheses": [
+        "For the classical derivative rule, sufficient regularity and decay",
+        "Use a function space and inversion theorem appropriate to the problem."
+      ],
+      "guarantees": "Under f̂(ξ) = ∫f(x)e^(−iξx) dx, derivatives become algebraic multipliers.",
+      "pitfalls": "Boundary conditions, multiplier zeros and inverse-transform hypotheses still matter.",
+      "steps": [
+        "Transform the second derivative with the stated convention.",
+        "The multiplier never vanishes on the real axis.",
+        "Verify in frequency; invert in a suitable space, for example for Schwartz data."
+      ]
+    },
+    "B-04.06": {
+      "title": "Convolution to multiplication",
+      "summary": "Replace a convolution integral by a pointwise product.",
+      "when": "A linear filter or integral equation contains a convolution.",
+      "hypotheses": [
+        "For the standard classical theorem, f and g are in L¹(ℝ)",
+        "Fix the Fourier normalization."
+      ],
+      "guarantees": "The transform of a convolution equals the product of transforms.",
+      "pitfalls": "The transform of a product is a convolution with a normalization factor.",
+      "steps": [
+        "Direct integration runs from 0 to x when x ≥ 0.",
+        "Direct transforms verify the convolution identity."
+      ]
+    },
+    "B-04.07": {
+      "title": "Laplace transform",
+      "summary": "Solve an initial-value ODE in an algebraic domain.",
+      "when": "An ODE has initial data and a useful Laplace transform.",
+      "hypotheses": [
+        "Suitable regularity and exponential order",
+        "Work in a half-plane of convergence",
+        "Retain initial data in derivative transforms."
+      ],
+      "guarantees": "The transformed equation encodes the ODE together with its initial value.",
+      "pitfalls": "Dropping the initial-value term changes the problem.",
+      "steps": [
+        "Transform the equation with y(0) = 0.",
+        "Solve algebraically and decompose into partial fractions.",
+        "Invert and verify the ODE and initial value."
+      ]
+    },
+    "B-04.11": {
+      "title": "Euler’s identity",
+      "summary": "Connect rotations, trigonometry and complex exponentials.",
+      "when": "Trigonometric products or rotations are awkward.",
+      "hypotheses": [
+        "θ is real in the geometric interpretation",
+        "Angles are identified modulo 2π for a unit complex number."
+      ],
+      "guarantees": "An exact identity converting trigonometric and exponential expressions.",
+      "pitfalls": "The argument is not a globally unique inverse of the complex exponential.",
+      "steps": [
+        "Expand the product using Euler’s identity.",
+        "Compare real parts to recover the addition formula.",
+        "Check a concrete pair of angles."
+      ]
+    },
+    "B-05.01": {
+      "title": "Use the complex conjugate",
+      "summary": "Connect complex arithmetic to nonnegative real quantities.",
+      "when": "You need to divide complex numbers or compute a modulus.",
+      "hypotheses": [
+        "For inversion, z is nonzero",
+        "Conjugation is antilinear over ℂ."
+      ],
+      "guarantees": "Multiplication by the conjugate gives the squared modulus.",
+      "pitfalls": "Conjugating a complex scalar also conjugates any coefficient multiplying it.",
+      "steps": [
+        "Multiply numerator and denominator by the conjugate.",
+        "The denominator is the squared modulus.",
+        "Multiplication verifies the reciprocal."
+      ]
+    },
+    "B-05.03": {
+      "title": "Hermitian inner product",
+      "summary": "Build positive geometry on complex vectors.",
+      "when": "The naive bilinear dot product gives a negative squared length.",
+      "hypotheses": [
+        "Vectors belong to the same complex inner product space",
+        "This atlas uses linearity in the second argument."
+      ],
+      "guarantees": "Conjugate symmetry, positive definiteness and a real nonnegative squared norm.",
+      "pitfalls": "Other books use the opposite convention; projection formulas must match.",
+      "steps": [
+        "Conjugate the first vector before multiplying.",
+        "The squared norm is positive.",
+        "The inner product certifies orthogonality and length."
+      ]
+    },
+    "B-05.04": {
+      "title": "Orthogonal projection",
+      "summary": "Find the closest point on a line using an inner product.",
+      "when": "You need a best approximation or an orthogonal decomposition.",
+      "hypotheses": [
+        "u is nonzero",
+        "Use a consistent inner product convention."
+      ],
+      "guarantees": "The residual is orthogonal to u and the projection minimizes the distance to v on span(u).",
+      "pitfalls": "A projection loses information: the original vector cannot be recovered from it alone.",
+      "steps": [
+        "Compute numerator and denominator using the conjugate.",
+        "The projection coefficient is 1.",
+        "Orthogonality verifies the best approximation."
+      ]
+    },
+    "B-05.06": {
+      "title": "Riesz representation",
+      "summary": "Represent a continuous linear functional by a unique vector.",
+      "when": "A functional is easier to understand geometrically.",
+      "hypotheses": [
+        "H is a Hilbert space",
+        "F is linear and continuous",
+        "Use linearity in the second inner product argument."
+      ],
+      "guarantees": "There is a unique representing vector v with ‖F‖ = ‖v‖.",
+      "pitfalls": "An arbitrary normed space need not have this inner product representation.",
+      "steps": [
+        "Choose v so its conjugated components are the coefficients of F.",
+        "Check the representation for an arbitrary vector x."
+      ]
+    },
+    "B-05.07": {
+      "title": "Adjoint operator",
+      "summary": "Move an operator across the inner product.",
+      "when": "You need self-adjointness, normality or an operator’s dual action.",
+      "hypotheses": [
+        "A is a bounded linear operator on a Hilbert space",
+        "For matrices, use the Hermitian inner product."
+      ],
+      "guarantees": "The adjoint exists uniquely; in finite dimensions it is the conjugate transpose.",
+      "pitfalls": "For unbounded operators the adjoint’s domain is part of the definition.",
+      "steps": [
+        "Transpose and conjugate every entry.",
+        "This identity verifies the defining inner product property."
+      ]
+    },
+    "B-06.03": {
+      "title": "Divergence theorem",
+      "summary": "Replace boundary flux by a volume integral.",
+      "when": "Parametrizing the boundary is harder than differentiating the field.",
+      "hypotheses": [
+        "A bounded region with sufficiently regular boundary",
+        "A sufficiently regular vector field",
+        "Use the outward normal."
+      ],
+      "guarantees": "The total outward flux equals the integral of divergence.",
+      "pitfalls": "An inward normal reverses the flux sign.",
+      "steps": [
+        "Differentiate the two components.",
+        "Multiply by the area of the unit disk.",
+        "Direct boundary integration confirms the result."
+      ]
+    },
+    "B-06.05": {
+      "title": "Residue theorem",
+      "summary": "Turn a contour integral into a sum at poles.",
+      "when": "Complex singularities simplify an otherwise difficult integral.",
+      "hypotheses": [
+        "f is meromorphic inside and on a positively oriented simple closed contour",
+        "Only finitely many poles lie inside and none on the contour."
+      ],
+      "guarantees": "The contour integral is determined by the enclosed residues.",
+      "pitfalls": "For real improper integrals, justify contributions from added contour segments.",
+      "steps": [
+        "The only pole inside the contour is simple.",
+        "Apply the theorem for counterclockwise orientation.",
+        "Uniform convergence on the circle allows termwise integration; only 1/z contributes."
+      ]
+    },
+    "B-07.02": {
+      "title": "Taylor polynomial with remainder",
+      "summary": "Approximate a function while controlling the error.",
+      "when": "A local polynomial is easier to calculate than the original function.",
+      "hypotheses": [
+        "Sufficient differentiability on the interval between a and x",
+        "Bound the next derivative to control the Lagrange remainder."
+      ],
+      "guarantees": "A finite polynomial plus an exact remainder; a derivative bound gives an error estimate.",
+      "pitfalls": "Smoothness alone does not imply equality with the infinite Taylor series.",
+      "steps": [
+        "Use the degree-two polynomial about 0.",
+        "On [0, 0.2], the third derivative is at most e^0.2.",
+        "The result is an interval, not an asserted exact decimal."
+      ]
+    },
+    "B-08.01": {
+      "title": "Dominated convergence",
+      "summary": "Justify moving a limit inside an integral.",
+      "when": "Pointwise limits are easy but integrals depend on n.",
+      "hypotheses": [
+        "Measurable functions converge almost everywhere",
+        "One integrable g dominates every abs(fₙ) almost everywhere."
+      ],
+      "guarantees": "The integrals converge and ‖fₙ − f‖₁ tends to zero.",
+      "pitfalls": "A different bound for every n is insufficient: the dominator must be uniform.",
+      "steps": [
+        "Convergence fails at x = 1 only, a null set; 1 is integrable.",
+        "Apply dominated convergence.",
+        "The explicit integral verifies the limit."
+      ]
+    },
+    "B-09.01": {
+      "title": "Intermediate value theorem",
+      "summary": "Guarantee a real root by a change of sign.",
+      "when": "You need to prove a root exists or bracket it for bisection.",
+      "hypotheses": [
+        "f is continuous on [a, b]",
+        "Endpoint values have opposite signs."
+      ],
+      "guarantees": "At least one root lies inside the interval.",
+      "pitfalls": "A sign change across a discontinuity does not guarantee a root; uniqueness is not implied.",
+      "steps": [
+        "The polynomial is continuous and changes sign.",
+        "Existence follows without a closed-form root.",
+        "An additional monotonicity argument proves uniqueness on this interval."
+      ]
+    },
+    "B-09.03": {
+      "title": "Banach fixed point theorem",
+      "summary": "Turn a contraction into a unique solution and a convergent iteration.",
+      "when": "An equation can be written x = T(x).",
+      "hypotheses": [
+        "A nonempty complete metric space X",
+        "T maps all of X into X",
+        "A uniform contraction constant 0 ≤ q < 1."
+      ],
+      "guarantees": "A unique fixed point; every iteration from X converges with an explicit error bound.",
+      "pitfalls": "A small derivative at one point is not a uniform contraction estimate.",
+      "steps": [
+        "Check invariance, completeness and a uniform contraction bound.",
+        "Iterate from any point of [0, 1].",
+        "This posterior bound certifies error, unlike decimal stability alone."
+      ]
+    },
+    "B-09.09": {
+      "title": "Lax–Milgram theorem",
+      "summary": "Establish a unique weak solution in a Hilbert space.",
+      "when": "A PDE is better expressed through test functions.",
+      "hypotheses": [
+        "H is a real Hilbert space",
+        "a is bilinear, continuous and coercive",
+        "F is a continuous linear functional."
+      ],
+      "guarantees": "There is a unique weak solution u in H.",
+      "pitfalls": "A weak solution is not automatically a classical solution; extra regularity needs proof.",
+      "steps": [
+        "Choose the Sobolev space and use its derivative norm.",
+        "Cauchy–Schwarz and Poincaré give continuity.",
+        "Coercivity gives a unique weak solution; the variational identity is its verification criterion."
+      ]
+    },
+    "B-10.02": {
+      "title": "Cauchy–Schwarz inequality",
+      "summary": "Bound an inner product by the product of lengths.",
+      "when": "You need an estimate, continuity or an error bound.",
+      "hypotheses": [
+        "A real or complex inner product space."
+      ],
+      "guarantees": "A universal bound; equality exactly for linearly dependent vectors, including zero cases.",
+      "pitfalls": "This is a bound, not a formula for the actual inner product.",
+      "steps": [
+        "Compute the quantities in the bound.",
+        "Squaring nonnegative sides verifies the inequality."
+      ]
+    },
+    "B-11.05": {
+      "title": "Euler–Lagrange equation",
+      "summary": "Find the differential equation of a stationary curve.",
+      "when": "A problem asks for a curve minimizing an integral functional.",
+      "hypotheses": [
+        "Sufficient regularity of the Lagrangian and candidate curve",
+        "Fixed endpoint variations vanish at the boundary",
+        "The candidate is an interior stationary point."
+      ],
+      "guarantees": "A necessary stationarity equation; further conditions are needed for a minimum.",
+      "pitfalls": "Solving Euler–Lagrange alone does not prove a global minimum.",
+      "steps": [
+        "The stationary candidates are straight lines.",
+        "The endpoint values determine the line.",
+        "A separate nonnegative energy calculation verifies the global minimum."
+      ]
+    },
+    "B-11.06": {
+      "title": "Least squares by projection",
+      "summary": "Project data onto the range of a matrix.",
+      "when": "An overdetermined linear system has no exact solution.",
+      "hypotheses": [
+        "Finite-dimensional real or complex Euclidean spaces",
+        "Full column rank is required for a unique coefficient vector."
+      ],
+      "guarantees": "A best approximation exists and its residual is orthogonal to the column space.",
+      "pitfalls": "Normal equations can worsen conditioning; QR or SVD is often preferable numerically.",
+      "steps": [
+        "Solve the normal equation.",
+        "Orthogonality certifies the least-squares solution.",
+        "Completing the square directly verifies the unique minimum."
+      ]
+    },
+    "B-12.01": {
+      "title": "Bisection",
+      "summary": "Repeatedly halve a bracket containing a real root.",
+      "when": "You have a continuous function and a sign-changing interval.",
+      "hypotheses": [
+        "Continuity on the initial closed interval",
+        "Opposite nonzero endpoint signs, or handle endpoint roots first."
+      ],
+      "guarantees": "A nested root bracket; the midpoint error is at most half the interval width.",
+      "pitfalls": "Without continuity a sign change can hide a pole instead of a root.",
+      "steps": [
+        "The positive midpoint value keeps the left half.",
+        "The endpoint signs still differ.",
+        "The new midpoint has a certified error bound."
+      ]
+    },
+    "B-12.02": {
+      "title": "Newton’s method",
+      "summary": "Follow tangent lines toward a root.",
+      "when": "A differentiable equation has no convenient exact solution.",
+      "hypotheses": [
+        "Nonzero derivative at each iterate",
+        "For local quadratic convergence, sufficient smoothness near a simple root and a sufficiently close initial guess."
+      ],
+      "guarantees": "Under local hypotheses, fast convergence to a simple root.",
+      "pitfalls": "Poor starting points, zero derivatives or multiple roots can spoil convergence.",
+      "steps": [
+        "Insert f and its derivative into Newton’s rule.",
+        "Compute two iterates.",
+        "A residual plus the factorization of the error verifies progress."
+      ]
+    },
+    "B-12.09": {
+      "title": "Residual & conditioning",
+      "summary": "Relate an approximate solution’s residual to its error.",
+      "when": "A numerical answer seems accurate because the residual is small.",
+      "hypotheses": [
+        "A is invertible",
+        "Use compatible matrix and vector norms",
+        "Estimate the inverse norm or condition number."
+      ],
+      "guarantees": "A posterior error control that accounts for sensitivity.",
+      "pitfalls": "A tiny residual can coexist with a large solution error in an ill-conditioned problem.",
+      "steps": [
+        "The residual is very small.",
+        "Yet the actual error has size 1.",
+        "The inverse norm explains and bounds the error exactly here."
+      ]
+    },
+    "B-12.11": {
+      "title": "Verify in the original equation",
+      "summary": "Check candidates against the original expression and domain.",
+      "when": "A transformation, cancellation or symbolic engine produced roots.",
+      "hypotheses": [
+        "The candidate lies in the original domain",
+        "Every original expression is defined",
+        "Exact substitution gives zero residual, or numerical error is controlled."
+      ],
+      "guarantees": "Each checked candidate is a solution; completeness requires a separate argument.",
+      "pitfalls": "A numerical residual near zero alone is not an exact proof or a complete root list.",
+      "steps": [
+        "Substitute into the original equation, not the squared one.",
+        "Reject the extraneous root and verify the valid root 2."
+      ]
+    }
+  },
+  "routes": {
+    "R-ALG": {
+      "title": "From equation to checked roots"
+    },
+    "R-HILBERT": {
+      "title": "From imaginary numbers to Hilbert"
+    },
+    "R-ODE": {
+      "title": "From derivatives to algebra"
+    },
+    "R-NUM": {
+      "title": "From existence to approximation"
+    }
+  },
+  "ui": {
+    "appName": "Math Bridges",
+    "subtitle": "An atlas for mathematical thinking",
+    "explore": "Explore bridges",
+    "map": "Map view",
+    "solver": "Equation lab",
+    "routes": "Learning paths",
+    "compare": "Compare pins",
+    "search": "Search a method, formula or obstacle…",
+    "searchLabel": "Search the atlas",
+    "clear": "Clear",
+    "allLevels": "All levels",
+    "level": "Level",
+    "allFamilies": "All families",
+    "families": "By purpose",
+    "disciplines": "By discipline",
+    "browse": "Browse the atlas",
+    "introLabel": "MAKE THE NEXT CONNECTION",
+    "introTitle": "A different view.\nA simpler problem.",
+    "introText": "Find the transformation that makes your problem click. Explore methods, check their conditions, and connect the ideas behind the equations.",
+    "bridgeCount": "bridges",
+    "familyCount": "families",
+    "languages": "languages",
+    "featured": "A good place to start",
+    "allBridges": "The bridge library",
+    "results": "results",
+    "noResults": "No bridges match these filters. Try another term or clear the filters.",
+    "reset": "Reset filters",
+    "open": "Explore bridge",
+    "pin": "Pin for comparison",
+    "unpin": "Unpin bridge",
+    "pinned": "Pinned bridges",
+    "emptyPins": "Pin a few bridges to keep them close and compare their approaches.",
+    "pinHint": "Your comparison workspace",
+    "viewPins": "Compare",
+    "close": "Close",
+    "back": "Back to library",
+    "when": "When to use it",
+    "hypotheses": "Check the conditions",
+    "guarantees": "What it guarantees",
+    "pitfalls": "Watch out for",
+    "example": "Cross the bridge: a worked example",
+    "why": "Why this step works",
+    "related": "Make another connection",
+    "prerequisites": "Useful foundations",
+    "source": "Read the source atlas (Italian)",
+    "catalogNote": "A curated starting collection based on the founding atlas. More nodes can be added through the JSON catalog.",
+    "resultType": "Result type",
+    "reversibility": "Reversibility",
+    "yes": "Reversible",
+    "no": "Not generally reversible",
+    "conditional": "Conditional",
+    "compareTitle": "Different bridges, side by side.",
+    "compareText": "Keep the purpose, conditions and guarantees in view while choosing your next step.",
+    "compareEmpty": "Pin at least two bridges to compare their methods.",
+    "remove": "Remove pin",
+    "mapTitle": "See how the tools connect.",
+    "mapText": "Expand nodes, zoom and follow a bridge link. Choose a family to focus on one part of the atlas.",
+    "mapScope": "Map scope",
+    "fit": "Fit map",
+    "mapFallback": "The same hierarchy is available in the accessible tree navigator.",
+    "routesTitle": "Follow a thread of ideas.",
+    "routesText": "Each route connects a sequence of bridges. Start anywhere and return to the foundations when needed.",
+    "startPath": "Explore this path",
+    "solverTitle": "What could unlock your equation?",
+    "solverText": "Let Algebrite inspect an equation, suggest bridges, and explain supported solution steps. All calculations stay in your browser.",
+    "equation": "Your equation",
+    "variable": "Variable",
+    "domain": "Solution domain",
+    "real": "Real numbers ℝ",
+    "complex": "Complex numbers ℂ",
+    "analyze": "Find a bridge",
+    "analyzing": "Analyzing…",
+    "syntax": "Use explicit multiplication: 2*x. Powers: x^2. Functions: sqrt(x), sin(x), cos(x), tan(x), exp(x), log(x). One variable; polynomials up to degree 4 and simple radical equations have guided steps.",
+    "try": "Try an example",
+    "suggestions": "Bridges worth exploring",
+    "analysis": "Solution trail",
+    "conditions": "Original-domain checks",
+    "noRestrictions": "No additional restrictions from denominators or functions.",
+    "candidates": "Candidate roots",
+    "verification": "Check in the original equation",
+    "verified": "Verified exactly",
+    "rejected": "Rejected",
+    "unknown": "Not certified",
+    "emptyRoots": "No solutions in the chosen domain.",
+    "identity": "Every value in the original domain satisfies this equation.",
+    "contradiction": "This equation has no solutions.",
+    "unsupported": "This form needs further analysis. These bridges are suggestions, not a certified solution path.",
+    "limited": "The guided solver handles single-variable polynomials of degree 1–4, rational equations with such numerators, and sqrt(polynomial) = linear polynomial. Other forms receive suggestions only.",
+    "invalid": "Enter one valid equation with one supported variable. Use explicit multiplication and supported function names.",
+    "tooComplex": "This expression is too large for the guided solver. Simplify it first.",
+    "timeout": "The calculation took too long and was stopped. Try a simpler expression.",
+    "workerError": "The symbolic engine could not finish this calculation. Try a simpler expression.",
+    "stepNormalize": "Move everything to the left and simplify.",
+    "stepFactor": "Factor the numerator. Denominator restrictions still apply.",
+    "stepLinear": "Isolate the variable using a nonzero coefficient.",
+    "stepQuadratic": "Use the quadratic formula; the discriminant determines real or complex roots.",
+    "stepSubstitution": "Recognize a quadratic in the squared variable, then recover both signs.",
+    "stepRoots": "Generate polynomial root candidates with Algebrite.",
+    "stepSquare": "Square both sides to generate candidates, then check the original radical equation.",
+    "stepVerify": "Substitute each candidate into both original sides and check every domain restriction.",
+    "rootNote": "Only candidates certified in the original equation are accepted. An uncertified candidate needs further checking; the displayed list may then be incomplete.",
+    "powered": "Built with Algebrite · KaTeX · Markmap",
+    "footer": "Know why. Check when. See what follows.",
+    "menu": "Toggle navigation",
+    "copyLink": "Copy bridge link",
+    "copied": "Link copied",
+    "copyFailed": "Copy the address from your browser.",
+    "saved": "Saved locally",
+    "skip": "Skip to content",
+    "browseAll": "Browse all bridges",
+    "enterEquation": "Enter an equation",
+    "path": "Path",
+    "overview": "Overview",
+    "review": "Editorial status: awaiting independent review",
+    "mapLoading": "Loading map…",
+    "types": {
+      "EXACT_EQUIVALENCE": "Exact equivalence",
+      "EXACT_IMPLICATION": "One-way implication",
+      "EXACT_REPRESENTATION": "Exact representation",
+      "DOMAIN_EXTENSION": "Domain extension",
+      "APPROX_WITH_ERROR": "Approximation with error",
+      "EXISTENCE": "Existence",
+      "EXISTENCE_UNIQUENESS": "Existence & uniqueness",
+      "BOUND_ONLY": "Bound only",
+      "NECESSARY_CONDITION": "Necessary condition",
+      "ALGORITHM": "Algorithm"
+    }
+  }
+}
