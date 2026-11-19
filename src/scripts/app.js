@@ -21,7 +21,7 @@ const t = key => locales[language].ui[key] ?? key;
 const text = bridge => locales[language].bridges[typeof bridge === 'string' ? bridge : bridge.id];
 const icon = name => {
   const paths = { pin:'M9 3h6l-1 6 4 4v2h-5v6l-1-2-1 2v-6H6v-2l4-4-1-6Z', search:'m21 21-5.2-5.2M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z', map:'m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Zm6-3v15m6-12v15', spark:'m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z', check:'m5 12 4 4L19 6', link:'m10 13 4-4m-6 6-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2 2 1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0' };
-  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${paths[name] || paths.spark}"/></svg>`;
+  return `<svg class="ui-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${paths[name] || paths.spark}"/></svg>`;
 };
 function math(latex, display = false) {
   return `<span class="math">${katex.renderToString(latex, { displayMode:display, throwOnError:false, strict:'ignore', trust:false, output:'htmlAndMathml' })}</span>`;

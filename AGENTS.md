@@ -145,7 +145,7 @@ Owns the corresponding Italian text with the same object-key structure and worke
 
 Owns browser state, routing, views, navigation, and presentation of worker output.
 
-- Embedded `atlas`, `locales`, `maps`, and `byId` supply data. `t`/`text` select translations; `escape` and `math` render safely; `icon`, `card`, and `pinButton` build shared components.
+- Embedded `atlas`, `locales`, `maps`, and `byId` supply data. `t`/`text` select translations; `escape` and `math` render safely; `icon`, `card`, and `pinButton` build shared components. `icon` supplies intrinsic 18×18 dimensions and the `ui-icon` class so heading and link icons do not expand to the default SVG viewport size.
 - `storage` wraps `mathbridges.*` JSON local storage with failure fallback. Initialization validates language and filters persisted pins against known IDs. Query `lang` takes precedence over saved language, then navigator/default selection.
 - `route`, `exploreLink`, and `bridgeLink` own fragment URLs. `filters`, `matchingBridges`, `libraryResults`, and `setFilter` implement search and family/domain/maximum-level filters; typing search replaces history without losing focus.
 - `renderHeader` and `renderSidebar` own navigation, tree expansion, the persistent pin strip, and saved-pin links. `renderExplore`, `renderBridge`, `renderCompare`, `renderRoutes`, and `renderMap` own their respective screens. `art` draws the library illustration. `renderMap` creates Markmap; `render` destroys an old map before changing views.
@@ -171,7 +171,7 @@ Owns the isolated Algebrite import and `self.onmessage` dispatch into `analyzeEq
 
 ### [src/styles/app.css](src/styles/app.css)
 
-Owns design tokens, layout, responsive breakpoints, tree/pin/card/detail/map/lab styles, math overflow, skip-link/focus behavior, and reduced-motion overrides. The appended pin-strip/readability rules intentionally override earlier component values; inspect the cascade before adding another rule. DOM classes come from [the template](src/templates/index.html) and [app](src/scripts/app.js). There is no screenshot regression suite; verify visual changes in a real browser when available.
+Owns design tokens, layout, responsive breakpoints, tree/pin/card/detail/map/lab styles, math overflow, skip-link/focus behavior, and reduced-motion overrides. `.ui-icon` fixes shared icons at 18×18 pixels without flex growth or shrinkage; more specific existing sidebar rules retain their smaller sizes. The appended pin-strip/readability rules intentionally override earlier component values; inspect the cascade before adding another rule. DOM classes come from [the template](src/templates/index.html) and [app](src/scripts/app.js). There is no screenshot regression suite; verify visual changes in a real browser when available.
 
 ### [docs/atlante_ponti_matematici-ITA.md](docs/atlante_ponti_matematici-ITA.md)
 
@@ -238,6 +238,10 @@ CAS degree alone can misclassify a transcendental expression, and floating arith
 ### Overlapping builds, atomic saves, and reload loops — Fixed regression risk
 
 Concurrent generators race with `libs/` replacement, individual-file watchers can detach after editor renames, and reloading on every SSE connection can loop. Delayed/duplicate filesystem events can also trigger unnecessary startup rebuilds. [serve.js](serve.js) uses one build queue, directory watches, `inputFingerprint` to skip unchanged watch input, complete snapshot publication, and revision comparison in `reloadScript`. Preserve these patterns and run [server tests](tests/serve.test.mjs).
+
+### Oversized heading icons — Fixed regression risk
+
+An SVG `viewBox` defines coordinates, not its displayed dimensions. Shared icons outside button-specific CSS can otherwise use a large default viewport, distorting detail headings. Keep intrinsic dimensions in `icon` in [app.js](src/scripts/app.js) and the non-growing `.ui-icon` rule in [app.css](src/styles/app.css). Check both detail-panel heading icons at 18×18 pixels after building; do not apply a blanket SVG size that would constrain KaTeX, Markmap, or the bridge illustration.
 
 ## Interface Ownership Map
 
